@@ -6,7 +6,7 @@
         <title>SCENARIO 0.</title>
         <link rel="shortcut icon" href="">
         <link rel="stylesheet" href="/style.css">
-        <link href="https://rawcdn.githack.com/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
+        <script src="https://kit.fontawesome.com/37b69e3f02.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <script src="https://static.tumblr.com/rtrqcib/VGGnlh8rf/jquery.style-my-tooltips.min.js"></script>
         <script>(function($){$(document).ready(function(){$("a[title]").style_my_tooltips({tip_follows_cursor:true,tip_delay_time:0,tip_fade_speed:0,attribute:"title"});});})(jQuery);</script>
@@ -19,7 +19,12 @@
             Scenario
             <div id="value">100</div>
             <div id="subtitle">
-                Click to start
+                Click to Start
+            </div>
+            <div id="options">
+                <div><a href="page1.html">New Game</a></div>
+                <div style="color:gray;">Continue</div>
+                <div><a href="credits.html">Credits</a></div>
             </div>
         </div>
         
@@ -47,9 +52,13 @@
         </script>
         
         <script>
-            var click = new Audio("https://files.catbox.moe/ok7s2u.ogg");
+            $("#subtitle").delay(5000).fadeIn();
+            
+            var click = new Audio("https://files.catbox.moe/i3b5jy.ogg");
             document.onclick = function() {
                 click.play();
+                $("#subtitle").fadeOut(50);
+                $("#options").fadeIn(100);
             }
             click.volume = 0.5;
         </script>

@@ -17,6 +17,13 @@ body{
     user-select:none;
     text-align: center;
     font-family:'dead end';
+    overflow:hidden;
+    font-size:20px;
+}
+
+a{
+    text-decoration: none;
+    color:white;
 }
 
 #title{
@@ -36,10 +43,29 @@ body{
 #subtitle{
     font-size:30px;
     position:absolute;
-    bottom:-200px;
+    bottom:-150px;
     animation: fade 5s infinite;
     left:0;
     right:0;
+    display:none;
+}
+
+#options{
+    font-size:30px;
+    display:none;
+    position:absolute;
+    bottom:-150px;
+    left:0;
+    right:0;
+}
+
+#options > div{
+    transition:0.5s;
+}
+
+#options > div:hover{
+    letter-spacing: 2px;
+    transition:0.5s;
 }
 
 @keyframes fade {
