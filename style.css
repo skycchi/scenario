@@ -14,6 +14,9 @@
 body{
     background-color:black;
     color:white;
+    user-select:none;
+    text-align: center;
+    font-family:'dead end';
 }
 
 #title{
