@@ -1,0 +1,51 @@
+@font-face{
+    font-family: 'DEAD END';
+    src: url(https://static.tumblr.com/pvnotae/DzVqdg2j5/dead_end.ttf);
+}
+@font-face{
+    font-family: 'Decibil';
+    src: url(https://static.tumblr.com/pvnotae/kwwqdg2pw/decibel_2.ttf);
+}
+@font-face{
+    font-family: 'Aachen';
+    src: url(https://static.tumblr.com/pvnotae/YIoqdg2yp/aachen-bold-opentype.otf);
+}
+
+body{
+    background-color:black;
+    color:white;
+}
+
+#title{
+    font-family:'dead end';
+    font-size:120px;
+    text-align: center;
+    animation: fadeIn 0.5s;
+    margin: auto;
+    width:fit-content;
+    width: -moz-fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position:absolute;
+}
+
+#subtitle{
+    font-size:30px;
+    position:absolute;
+    bottom:-200px;
+    animation: fade 5s infinite;
+    left:0;
+    right:0;
+}
+
+@keyframes fade {
+    0% { opacity:0; }
+    50%{ opacity:1; }
+    100% { opacity:0; }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:1; }
+}
