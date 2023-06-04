@@ -15,6 +15,10 @@
     
     </style>
     <body>
+        <audio autoplay loop id="go">
+            <source src="https://files.catbox.moe/tboadh.mp3">
+        </audio>
+        
         <div id="title">
             Scenario
             <div id="value">100</div>
@@ -45,6 +49,11 @@
             const obj = document.getElementById("value");
             animateValue(obj, 100, 0, 5000);
 
+        </script>
+        
+        <script>
+            var audio = document.getElementById("go");
+            audio.volume = 0.5;
         </script>
         
         <script>
