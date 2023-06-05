@@ -91,10 +91,24 @@ a{
     100% { opacity:1; }
 }
 
-.footer{
+.header{
     position:absolute;
     font-size:12px;
+    top:0px;
+    left:0px;
+}
+
+.footer{
+    position:absolute;
+    font-size:20px;
     bottom:0px;
+    right:0px;
+    animation: downarrow 0.6s infinite alternate ease-in-out;
+}
+
+@keyframes downarrow {
+  0% { -webkit-transform: translateY(0); opacity: 0.4 }
+  100% { -webkit-transform: translateY(0.4em); opacity: 0.9 }
 }
 
 .box{
