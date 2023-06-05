@@ -4,17 +4,27 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>1</title>
-        <link rel="shortcut icon" href="">
+        <link rel="shortcut icon" href="https://files.catbox.moe/h33w19.png">
         <link rel="stylesheet" href="/style.css">
         <script src="https://kit.fontawesome.com/37b69e3f02.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     </head>
     <style>
-        .hidden{
-            display:none;
+        #wrapper{
+            width:100%;
+            height:100%;
+            position:absolute;
+            background-image: linear-gradient(to top, rgba(0,0,0, 0.81), rgba(0,0,0, 0.81)), url(https://files.catbox.moe/v94d37.gif);
+            background-position: 0% 0%, center center;
+            background-repeat: repeat, repeat;
+            background-size: auto, 10rem;
+            background-attachment:fixed;
+            z-index:999999999999;
+            margin-top:-20px;
         }
     </style>
-    <body>
+    <body onload="myFunction()">
+        <div id="wrapper"></div>
         
         <div class="box">
             <div class="inner">
@@ -66,11 +76,23 @@
         </div>
         
         <script>
+            $("#wrapper").delay(3000).fadeOut();
+        </script>
+        
+        <script>
             var click = new Audio("https://files.catbox.moe/i3b5jy.ogg");
             document.onclick = function() {
                 click.play();
             }
             click.volume = 0.5;
+        </script>
+        
+        <script>
+            function myFunction(){
+                var static = new Audio("https://files.catbox.moe/ky4n2a.mp3");
+                static.volume = 0.5;
+                static.play();
+            }
         </script>
         
         <script>

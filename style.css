@@ -11,6 +11,7 @@ body{
     font-family:'dead end';
     overflow:hidden;
     font-size:20px;
+    margin:0px;
 }
 
 ::-webkit-scrollbar{
@@ -104,6 +105,10 @@ a{
     bottom:0px;
     right:0px;
     animation: downarrow 0.6s infinite alternate ease-in-out;
+}
+
+.hidden{
+    display:none;
 }
 
 @keyframes downarrow {
