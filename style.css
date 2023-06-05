@@ -165,3 +165,21 @@ a{
     transform: translate(-50%, -50%);
     position:absolute;
 }
+
+.arrowleft img, .arrowright img{
+    width:100px;
+    display:block;
+    margin:auto;
+}
+
+.arrowleft{
+    transform: scaleX(-1);
+}
+
+.dialoguewrap{
+    display:flex;
+    gap:40px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
