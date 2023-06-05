@@ -8,19 +8,78 @@
         <link rel="stylesheet" href="/style.css">
         <script src="https://kit.fontawesome.com/37b69e3f02.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        <script src="https://static.tumblr.com/rtrqcib/VGGnlh8rf/jquery.style-my-tooltips.min.js"></script>
-        <script>(function($){$(document).ready(function(){$("a[title]").style_my_tooltips({tip_follows_cursor:true,tip_delay_time:0,tip_fade_speed:0,attribute:"title"});});})(jQuery);</script>
     </head>
+    <style>
+        .hidden{
+            display:none;
+        }
+    </style>
     <body>
         
-        <div id="box">
-            Gabriel jolts awake. "That dream again..."<br><br>
-            He's been having these strange nightmares. Each and every nightmare starts and ends the same way. He would be going about his daily life when suddenly abnormal occurrences would happen. Once it was the beginning of World War 3. Another time it was a world-ending meteor from space. The strangest had to be the one where aliens attacked, leading to the fall of civilization.<br><br>And every time, without fail, he would die at the end. <br><br>
-            He was tired of these nightmares. "When will I get a nice dream for once?"<br><br>
-            Gabriel decides to put it all past him. They're just stupid dreams, after all. He gets up from bed and gets ready for school. It's his last year of high school. Only a few more weeks before he graduates.
-            
+        <div class="box">
+            <div class="inner">
+                Gabriel jolts awake. "That dream again..."<br><br>
+                He's been having these strange nightmares. 
+                <div class="footer">1/6</div>
+            </div>
         </div>
         
+        <div class="box hidden">
+            <div class="inner">
+                Each and every nightmare starts and ends the same way. He would be going about his daily life when suddenly abnormal occurrences would happen. 
+                <div class="footer">2/6</div>
+            </div>
+        </div>
+        
+        <div class="box hidden">
+            <div class="inner">
+                Once it was the beginning of World War 3. Another time it was a world-ending meteor from space. The strangest had to be the one where aliens attacked.<br>
+                <div class="footer">3/6</div>
+            </div>
+        </div>
+        
+        <div class="box hidden">
+            <div class="inner">
+                And every time, without fail, he would die at the end.
+                <div class="footer">4/6</div>
+            </div>
+        </div>
+        
+        <div class="box hidden">
+            <div class="inner">
+                He was tired of these nightmares.
+                <div class="footer">5/6</div>
+            </div>
+        </div>
+        
+        <div class="box hidden">
+            <div class="inner">
+                Gabriel decides to put it all past him for the time being. He gets up from bed and gets ready for school. It's his last year of high school. Only a few more weeks before he graduates.
+                <div class="footer">6/6</div>
+            </div>
+        </div>
+        
+        <script>
+            var click = new Audio("https://files.catbox.moe/i3b5jy.ogg");
+            document.onclick = function() {
+                click.play();
+            }
+            click.volume = 0.5;
+        </script>
+        
+        <script>
+            (function(){
+
+            var hints = $('.box');
+            var i = 0;
+
+            $('.inner').on('click', function(){
+                i = (i + 1) % hints.length;
+                hints.hide().eq(i).show();
+            });
+
+            })();
+        </script>
         
     </body>
 </html>

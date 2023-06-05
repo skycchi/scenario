@@ -91,11 +91,16 @@ a{
     100% { opacity:1; }
 }
 
-#box{
+.footer{
+    position:absolute;
+    font-size:12px;
+    bottom:0px;
+}
+
+.box{
     width:600px;
-    height:300px;
-    overflow:auto;
-    padding:20px;
+    height:100px;
+    overflow:hidden;
     margin:20px auto;
     border-image-slice:1;
     border-image-width:6px;
@@ -104,4 +109,13 @@ a{
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
     border-style:solid;
     box-sizing:border-box; 
+}
+
+.inner{
+    display:flex;
+    justify-content:center;
+    height:100%;
+    align-items:center;
+    padding:0px 10px;
+    position: relative;
 }
