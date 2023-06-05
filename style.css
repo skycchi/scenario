@@ -2,14 +2,6 @@
     font-family: 'DEAD END';
     src: url(https://static.tumblr.com/pvnotae/DzVqdg2j5/dead_end.ttf);
 }
-@font-face{
-    font-family: 'Decibil';
-    src: url(https://static.tumblr.com/pvnotae/kwwqdg2pw/decibel_2.ttf);
-}
-@font-face{
-    font-family: 'Aachen';
-    src: url(https://static.tumblr.com/pvnotae/YIoqdg2yp/aachen-bold-opentype.otf);
-}
 
 body{
     background-color:black;
@@ -20,6 +12,26 @@ body{
     overflow:hidden;
     font-size:20px;
 }
+
+::-webkit-scrollbar{
+    width: 6px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #ed75ae;
+}
+
+::-webkit-scrollbar-track{
+    background: #000;
+    border-radius: 0px;
+}
+
 
 a{
     text-decoration: none;
@@ -77,4 +89,19 @@ a{
 @keyframes fadeIn {
     0% { opacity:0; }
     100% { opacity:1; }
+}
+
+#box{
+    width:600px;
+    height:300px;
+    overflow:auto;
+    padding:20px;
+    margin:20px auto;
+    border-image-slice:1;
+    border-image-width:6px;
+    border-image-outset:10px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-style:solid;
+    box-sizing:border-box; 
 }
