@@ -3,6 +3,10 @@
     src: url(https://static.tumblr.com/pvnotae/DzVqdg2j5/dead_end.ttf);
 }
 
+*{
+    cursor:url('https://files.catbox.moe/hhp4jr.cur'), auto;
+}
+
 body{
     background-color:black;
     color:white;
@@ -122,7 +126,7 @@ a{
     overflow:hidden;
     margin:20px auto;
     border-image-slice:1;
-    border-image-width:6px;
+    border-image-width:4px;
     border-image-outset:10px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
@@ -132,8 +136,8 @@ a{
 
 .icon{
     border-image-slice:1;
-    border-image-width:6px;
-    border-image-outset:10px 10px 4px 10px;
+    border-image-width:4px;
+    border-image-outset:10px 10px 1px 10px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
     border-style:solid;
@@ -182,4 +186,13 @@ a{
     justify-content: center;
     align-content: center;
     align-items: center;
+}
+
+img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
