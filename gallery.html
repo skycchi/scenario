@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="/style.css">
         <link href="https://rawcdn.githack.com/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://static.tumblr.com/rtrqcib/VGGnlh8rf/jquery.style-my-tooltips.min.js"></script>
+        <script>(function($){$(document).ready(function(){$("a[title]").style_my_tooltips({tip_follows_cursor:true,tip_delay_time:0,tip_fade_speed:0,attribute:"title"});});})(jQuery);</script>
     </head>
     <style>
         body{
@@ -17,7 +19,6 @@
         img{
             border-image-slice:1;
             border-image-width:4px;
-            border-image-outset:10px;
             border-image-repeat:stretch stretch;
             border-image-source:url("https://files.catbox.moe/p2cajb.png");
             border-style:solid;
@@ -27,13 +28,13 @@
     <body>
         Gallery
         <div class="pictures">
-            <a href="https://files.catbox.moe/v1ccbr.png"><img src="https://files.catbox.moe/v1ccbr.png"></a>
-            <a href="https://files.catbox.moe/ptp0ks.png"><img src="https://files.catbox.moe/ptp0ks.png"></a>
-            <a href="https://f2.toyhou.se/file/f2-toyhou-se/images/65880455_WeBqBAH8I5wBw6Y.png"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/65880455_WeBqBAH8I5wBw6Y.png"></a>
-            <a href="https://f2.toyhou.se/file/f2-toyhou-se/images/65880477_1fO4akGISztJYKh.png"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/65880477_1fO4akGISztJYKh.png"></a>
-            <a href="https://f2.toyhou.se/file/f2-toyhou-se/images/65880549_5lbZkAgs1tgSHc7.jpg"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/65880549_5lbZkAgs1tgSHc7.jpg"></a>
-            <a href="https://f2.toyhou.se/file/f2-toyhou-se/images/65880567_Dv4LQBI2Em1AS9I.jpg"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/65880567_Dv4LQBI2Em1AS9I.jpg"></a>
-            <a href="https://f2.toyhou.se/file/f2-toyhou-se/images/65880148_sXnnVF9YGynUtLG.png"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/65880148_sXnnVF9YGynUtLG.png"></a>
+            <a href="https://files.catbox.moe/v1ccbr.png" title="By Adilene"><img src="https://files.catbox.moe/v1ccbr.png"></a>
+            <a href="https://files.catbox.moe/ptp0ks.png" title="By Adilene"><img src="https://files.catbox.moe/ptp0ks.png"></a>
+            <a href="https://f2.toyhou.se/file/f2-toyhou-se/images/65880455_WeBqBAH8I5wBw6Y.png" title="By @hikarunogo on Tumblr"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/65880455_WeBqBAH8I5wBw6Y.png"></a>
+            <a href="https://f2.toyhou.se/file/f2-toyhou-se/images/65880477_1fO4akGISztJYKh.png" title="By @hikarunogo on Tumblr"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/65880477_1fO4akGISztJYKh.png"></a>
+            <a href="https://f2.toyhou.se/file/f2-toyhou-se/images/65880549_5lbZkAgs1tgSHc7.jpg" title="By @koideres on Tumblr"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/65880549_5lbZkAgs1tgSHc7.jpg"></a>
+            <a href="https://f2.toyhou.se/file/f2-toyhou-se/images/65880567_Dv4LQBI2Em1AS9I.jpg" title="By @koideres on Tumblr"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/65880567_Dv4LQBI2Em1AS9I.jpg"></a>
+            <a href="https://f2.toyhou.se/file/f2-toyhou-se/images/65880148_sXnnVF9YGynUtLG.png" title="By Adilene"><img src="https://f2.toyhou.se/file/f2-toyhou-se/images/65880148_sXnnVF9YGynUtLG.png"></a>
             
         </div>
         
@@ -46,6 +47,14 @@
                     $('.pictures').tjGallery({margin: 50});
                 })
             });
+        </script>
+        
+        <script>
+            var click = new Audio("https://files.catbox.moe/i3b5jy.ogg");
+            document.onclick = function() {
+                click.play();
+            }
+            click.volume = 0.5;
         </script>
     </body>
 </html>

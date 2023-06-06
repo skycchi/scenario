@@ -18,6 +18,20 @@ body{
     margin:0px;
 }
 
+#s-m-t-tooltip{
+    margin: 20px 0 0 20px;
+    padding: 5px;
+    max-width: 300px;
+    background-color:black;
+    color:white;
+    border-image-slice:1;
+    border-image-width:4px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-style:solid;
+    z-index: 9999;
+}
+
 ::-webkit-scrollbar{
     width: 6px;
     height: 10px;
