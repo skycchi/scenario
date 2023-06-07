@@ -7,31 +7,21 @@
         <link rel="shortcut icon" href="https://files.catbox.moe/h33w19.png">
         <link rel="stylesheet" href="/style.css">
         <script src="https://kit.fontawesome.com/37b69e3f02.js" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://unpkg.com/@barba/core"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     </head>
-    <style>
-        #static{
-            width:100vw;
-            height:100vh;
-            position:absolute;
-            background-image: linear-gradient(to top, rgba(0,0,0, 0.81), rgba(0,0,0, 0.81)), url(https://files.catbox.moe/v94d37.gif);
-            background-position: 0% 0%, center center;
-            background-repeat: repeat, repeat;
-            background-size: auto, 10rem;
-            background-attachment:fixed;
-            z-index:999999999999;
-        }
-        
-    </style>
     <body>
-        <div id="static"></div>
         
-        <div id="wrapper">
+    <div data-barba="wrapper">
         
+        <main data-barba="container" class="container">
+            
             <div class="icon"><img src="https://files.catbox.moe/v1ccbr.png" width="400"></div>
 
             <div class="dialoguewrap">
-                <div class="arrowleft" style="visibility:hidden;"><img src="https://files.catbox.moe/mosfgm.png"></div>
+                <div class="arrowleft" style="visibility:hidden;"><a href="/index.html" data-direction="prev"><img src="https://files.catbox.moe/mosfgm.png"></a></div>
                 
                 <div class="box">
                     <div class="inner">
@@ -82,41 +72,14 @@
                     </div>
                 </div>
             
-                <div class="arrowright"><a href="/pages/page2.html"><img src="https://files.catbox.moe/mosfgm.png"></a></div>
+                <div class="arrowright"><a href="/pages/page2.html" data-direction="next"><img src="https://files.catbox.moe/mosfgm.png"></a></div>
             </div>
-        </div>
+            
+        </main>
         
-        <script>
-            $("#static").delay(3000).fadeOut();
-        </script>
-        
-        <script>
-            var click = new Audio("https://files.catbox.moe/i3b5jy.ogg");
-            document.onclick = function() {
-                click.play();
-            }
-            click.volume = 0.5;
-        </script>
-        
-        <script>
-            var static = new Audio("https://files.catbox.moe/ky4n2a.mp3");
-            static.volume = 0.5;
-            static.play();
-        </script>
-        
-        <script>
-            (function(){
-
-            var hints = $('.box');
-            var i = 0;
-
-            $('.inner').on('click', function(){
-                i = (i + 1) % hints.length;
-                hints.hide().eq(i).show();
-            });
-
-            })();
-        </script>
-        
+        <script src="/scripts/main.js"></script>  
+        <script>barba.Pjax.start();</script>
+    </div>
+   
     </body>
 </html>
