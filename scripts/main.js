@@ -41,8 +41,6 @@ function animate(){
     setInterval(function(){
         audio.play;
     }, 5000)
-    
-    audio.volume = 0.5;
 }
 
 function keys(){
