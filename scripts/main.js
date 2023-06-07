@@ -1,13 +1,3 @@
-
-var click = new Audio("https://files.catbox.moe/i3b5jy.ogg");
-document.onclick = function() {
-    click.play();
-}
-click.volume = 0.5;
-
-var audio = document.getElementById("go");
-audio.volume = 0.5;
-
 function shuffle(){
     var hints = $('.box');
     var i = 0;
@@ -37,11 +27,18 @@ function animate(){
     animateValue(obj, 100, 0, 5000);
 
     $("#subtitle").delay(5000).fadeIn();
-
+    var click = new Audio("https://files.catbox.moe/i3b5jy.ogg");
+    
     document.onclick = function() {
         $("#subtitle").fadeOut(50);
         $("#options").fadeIn(100);
+        click.play();
     }
+    
+    click.volume = 0.5;
+    
+    var audio = document.getElementById("go");
+    audio.volume = 0.5;
 }
 
 $(document).ready(function() {
