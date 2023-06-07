@@ -41,12 +41,39 @@ function animate(){
     audio.volume = 0.5;
 }
 
+function keys(){
+    function leftArrowPressed() {
+        var left = document.getElementsByClassName("arrowleft");
+        left.click();
+    }
+
+    function rightArrowPressed() {
+        var right = document.getElementsByClassName("arrowright");
+        right.click();
+    }
+
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        switch (evt.keyCode) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+        }
+    };
+}
+
 $(document).ready(function() {
+    keys();
     shuffle();
     animate();
+    
 });
 
 barba.hooks.after(() => {
+    keys();
     shuffle();
     animate();
 });                    

@@ -135,7 +135,8 @@ a{
 }
 
 .box{
-    width:600px;
+    min-width:650px;
+    max-width:650px;
     height:100px;
     overflow:hidden;
     margin:20px auto;
@@ -148,41 +149,26 @@ a{
     box-sizing:border-box; 
 }
 
-.icon{
-    border-image-slice:1;
-    border-image-width:4px;
-    border-image-outset:10px 10px 1px 10px;
-    border-image-repeat:stretch stretch;
-    border-image-source:url("https://files.catbox.moe/p2cajb.png");
-    border-style:solid;
-    box-sizing:border-box; 
-    width:150px;
-    margin:20px auto;
-}
-
-.icon img{
-    width:100%;
-    display:block;
-}
-
 .inner{
-    display:flex;
-    justify-content:flex-start;
-    align-items:flex-start;
     padding:20px 10px;
     position: relative;
     text-align: left;
     height: 70px;
 }
 
+.dialoguewrap{
+    display:flex;
+    flex-direction:column;
+    width:fit-content;
+            width: -moz-fit-content;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position:absolute;
+}
+
 .container{
     margin: auto;
-    width:fit-content;
-    width: -moz-fit-content;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position:absolute;
 }
 
 .arrowleft img, .arrowright img{
@@ -191,21 +177,34 @@ a{
     margin:auto;
 }
 
-.arrowleft{
+.arrowleft img{
     transform: scaleX(-1);
 }
 
-.dialoguewrap{
+.arrowwrap{
     display:flex;
-    gap:40px;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    justify-content: space-between;
+    width:670px;
+    margin:auto;
+    
 }
 
-.iconwrap{
-    display:flex;
-    gap:20px;
+.spriteleft img{
+    width:600px;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    z-index:-1;
+    margin-left:-120px;
+}
+
+.spriteright img{
+    width:550px;
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    z-index:-1;
+    margin-right:-120px;
 }
 
 img {
