@@ -76,9 +76,12 @@ barba.hooks.after(() => {
     keys();
     shuffle();
     animate();
-});                    
+});  
+
+
 
 barba.init({
+   prevent: ({ el }) => el.classList && el.classList.contains('prevent'),
   transitions: [{
     name: 'opacity-transition',
     leave(data) {
