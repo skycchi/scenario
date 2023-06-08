@@ -160,11 +160,11 @@ a{
     display:flex;
     flex-direction:column;
     width:fit-content;
-            width: -moz-fit-content;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position:absolute;
+    width: -moz-fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position:absolute;
 }
 
 .container{

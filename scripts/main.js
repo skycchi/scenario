@@ -27,11 +27,10 @@ function animate(){
     animateValue(obj, 100, 0, 5000);
 
     $("#subtitle").delay(5000).fadeIn();
+    $("#options").delay(5000).fadeIn();
     var click = new Audio("https://files.catbox.moe/i3b5jy.ogg");
     
     document.onclick = function() {
-        $("#subtitle").fadeOut(50);
-        $("#options").fadeIn(100);
         click.play();
     }
     
@@ -86,7 +85,7 @@ barba.init({
     name: 'opacity-transition',
     from: {
       namespace: [
-        'index','page1'
+        'index1','index2','index3','page1'
       ]
     },
 

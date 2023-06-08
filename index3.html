@@ -11,36 +11,32 @@
         <script src="https://unpkg.com/@barba/core"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     </head>
-    <style>
-        a{
-            display:flex;
-            flex-direction:column;
-            width:100vw;
-            height:100vh;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position:absolute;
-        }
-    </style>
     <body>
     
-    <a href="/index2.html" data-direction="next"><div data-barba="wrapper">
+    <div data-barba="wrapper">
         
-        <main data-barba="container" data-barba-namespace="index1">
+        <main data-barba="container" data-barba-namespace="index3">
+            
+        <audio autoplay loop src="https://files.catbox.moe/52ek4e.mp3">
+        </audio>
         
-        <div id="title" style="width:2000px;font-size:80px;">
-            Autoplay is recommended.
-            <div id="subtitle">
-                Click Anywhere to Continue
+        <div id="title">
+            Scenario
+            <div id="value">100</div>
+            <div id="options">
+                <div><a href="/pages/page1.html" data-direction="next">New Game</a></div>
+                <div style="color:gray;">Continue</div>
+                <div><a href="gallery.html" class="prevent">Gallery</a></div>
+                <div><a href="credits.html" class="prevent">Credits</a></div>
             </div>
+            
         </div>
         </main>
         
         <script src="/scripts/main.js"></script>  
         <script>barba.Pjax.start();</script>
         
-    </div></a>
+    </div>
         
     </body>
 </html>
