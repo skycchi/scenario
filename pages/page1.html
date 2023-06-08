@@ -12,15 +12,16 @@
         <script src="https://unpkg.com/@barba/core"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     </head>
-    <body>
-        
-    <div data-barba="wrapper">
+    <body data-barba="wrapper">
         
         <audio autoplay loop>
             <source src="https://files.catbox.moe/imfmqp.mp3">
         </audio>
         
-        <main data-barba="container" class="container">
+        <main data-barba="container" data-barba-namespace="page1" class="container">
+            
+            <div class="spriteleft"><img src="https://files.catbox.moe/0n4ivv.png"></div>
+            
             <div class="dialoguewrap">
                 
                 <div class="box">
@@ -80,11 +81,8 @@
             
         </main>
         
-        <div class="spriteleft"><img src="https://files.catbox.moe/0n4ivv.png"></div>
-        
         <script src="/scripts/main.js"></script>  
         <script>barba.Pjax.start();</script>
-    </div>
    
     </body>
 </html>
