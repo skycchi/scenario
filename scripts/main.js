@@ -35,17 +35,22 @@ function animate(){
     }
 }
 
+function music(){
+    var music = document.getElementById("music");
+    music.play();
+}
+
 $(document).ready(function() {
     shuffle();
     animate();
-
+    music();
     
 });
 
 barba.hooks.after(() => {
     shuffle();
     animate();
-    
+    music();
 });  
 
 
@@ -70,7 +75,7 @@ barba.init({
       return gsap.from(data.next.container, {
         opacity: 0,
       });
-    }
+    },
   }]
     
 });
