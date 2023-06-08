@@ -83,11 +83,12 @@ a{
 
 #options{
     font-size:30px;
-    display:none;
+    
     position:absolute;
     bottom:-150px;
     left:0;
     right:0;
+    display:none;
 }
 
 #options > div{
