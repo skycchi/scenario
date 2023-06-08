@@ -201,6 +201,19 @@ a{
     margin:auto;
 }
 
+.musicplayer{
+    border-image-slice:1;
+    border-image-width:4px;
+    padding:10px 10px 5px 10px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-style:solid;
+    box-sizing:border-box;
+    background-color:black;
+    width:120px;
+    margin:-4px;
+}
+
 img {
     user-drag: none;
     -webkit-user-drag: none;
