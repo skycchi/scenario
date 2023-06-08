@@ -40,18 +40,28 @@ function music(){
     music.play();
 }
 
+                
+function play(){
+    var music = document.getElementById("music");
+    music.play();
+}
+
+function pause(){
+    var music = document.getElementById("music");
+    music.pause();
+}
+
 $(document).ready(function() {
     shuffle();
     animate();
     music();
-    
 });
 
 barba.hooks.after(() => {
     shuffle();
     animate();
     music();
-});  
+});   
 
 
 
