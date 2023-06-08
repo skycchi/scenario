@@ -13,11 +13,28 @@
     </head>
     <body data-barba="wrapper">
         
-        <audio autoplay>
-            <source src="https://files.catbox.moe/vhsjji.mp3">
+        <audio autoplay loop id="music">
+            <source src="https://files.catbox.moe/imfmqp.mp3">
         </audio>
         
+        <script>
+            let track = document.getElementById("music");
+            function play(){
+                music.play();
+            }
+            function pause(){
+                music.pause();
+            }
+        </script>
+        
         <main data-barba="container" class="container">
+            <header>
+                <div class="musicplayer">
+                    <div class="controls"><i class="fa-solid fa-play" onclick="play();"></i> <i class="fa-solid fa-pause" onclick="pause();"></i></div>
+                    <marquee>Now playing - 終劇の後で</marquee>
+                </div>
+            </header>
+            
             <div class="spritewrap">
                 <div class="spriteleft"><img src="https://files.catbox.moe/u1ia1h.png"></div>
                 <div class="spriteright"><img src="https://files.catbox.moe/nzpgu2.png"></div>
