@@ -138,7 +138,7 @@ a{
 .box{
     min-width:650px;
     max-width:650px;
-    height:100px;
+    height:120px;
     overflow:hidden;
     margin:20px auto;
     border-image-slice:1;
@@ -154,7 +154,7 @@ a{
     padding:20px 10px;
     position: relative;
     text-align: left;
-    height: 70px;
+    height: 90px;
 }
 
 .dialoguewrap{
