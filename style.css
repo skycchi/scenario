@@ -162,7 +162,7 @@ a{
     display:flex;
     flex-direction:row;
     align-items: center;
-    bottom:20px;
+    bottom:10px;
     position:absolute;
     width:100vw;
 }
@@ -184,18 +184,21 @@ a{
 
 .spritewrap{
     display:flex;
+    overflow:auto;
     justify-content: space-between;
+    width: -moz-available;        
+    width: -webkit-fill-available;
+    width: fill-available;
+    margin:0px 130px;
+    bottom:100px;
+    position:absolute;
 }
 
-.spriteleft img{
-    width:600px;
+.spriteleft img, .spriteright img{
+    width:300px;
     z-index:-1;
-}
-
-.spriteright img{
-    width:550px;
-
-    z-index:-1;
+    display:block;
+    margin:auto;
 }
 
 img {
