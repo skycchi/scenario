@@ -15,6 +15,22 @@
     
     <div data-barba="wrapper">
         
+        <script>
+           (function()
+            {
+              if( window.localStorage )
+              {
+                if( !localStorage.getItem('firstLoad') )
+                {
+                  localStorage['firstLoad'] = true;
+                  window.location.reload();
+                }  
+                else
+                  localStorage.removeItem('firstLoad');
+              }
+            })();
+        </script>
+        
         <main data-barba="container" data-barba-namespace="index3">
             
             <audio autoplay loop src="https://files.catbox.moe/52ek4e.mp3" id="go">
