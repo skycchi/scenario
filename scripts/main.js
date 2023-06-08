@@ -33,11 +33,6 @@ function animate(){
     document.onclick = function() {
         click.play();
     }
-    
-    setInterval(function(){
-        var audio = document.getElementById("go");
-        audio.play;
-    }, 5000)
 }
 
 function keys(){
