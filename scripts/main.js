@@ -35,10 +35,8 @@ function animate(){
         click.play();
     }
     
-    click.volume = 0.5;
-    
-    var audio = document.getElementById("go");
     setInterval(function(){
+        var audio = document.getElementById("go");
         audio.play;
     }, 5000)
 }
