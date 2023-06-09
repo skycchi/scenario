@@ -28,6 +28,9 @@ function animate(){
 
     $("#subtitle").delay(5000).fadeIn();
     $("#options").delay(5000).fadeIn();
+}
+
+function click(){
     var click = new Audio("https://files.catbox.moe/i3b5jy.ogg");
     
     document.onclick = function() {
@@ -40,24 +43,15 @@ function music(){
     music.play();
 }
 
-                
-function play(){
-    var music = document.getElementById("music");
-    music.play();
-}
-
-function pause(){
-    var music = document.getElementById("music");
-    music.pause();
-}
-
 $(document).ready(function() {
+    click();
     shuffle();
     animate();
     music();
 });
 
 barba.hooks.after(() => {
+    click();
     shuffle();
     animate();
     music();
