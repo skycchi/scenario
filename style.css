@@ -214,6 +214,37 @@ a{
     margin:-4px;
 }
 
+.date{
+    border-image-slice:1;
+    border-image-width:4px;
+    padding:10px 10px 5px 10px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-style:solid;
+    width:120px;
+    position:absolute;
+    right:-4px;
+    top:-4px;
+    padding:10px;
+    box-sizing:border-box;
+    font-size:50px;
+}
+
+.level{
+    border-image-slice:1;
+    border-image-width:4px;
+    padding:10px 10px 5px 10px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-style:solid;
+    width:90px;
+    position:absolute;
+    right:-4px;
+    top:85px;
+    padding:10px;
+    box-sizing:border-box;
+}
+
 img {
     user-drag: none;
     -webkit-user-drag: none;
