@@ -192,6 +192,7 @@ a{
     margin:0px 130px;
     bottom:100px;
     position:absolute;
+    z-index:-1;
 }
 
 .spriteleft img, .spriteright img{
@@ -210,8 +211,13 @@ a{
     border-style:solid;
     box-sizing:border-box;
     background-color:black;
-    width:120px;
-    margin:-4px;
+    width:500px;
+    z-index:9999999999;
+    position:absolute;
+    top:-4px;
+    right:0px;
+    left:0px;
+    margin:auto;
 }
 
 .date{
@@ -221,7 +227,7 @@ a{
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
     border-style:solid;
-    width:120px;
+    width:130px;
     position:absolute;
     right:-4px;
     top:-4px;
