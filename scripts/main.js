@@ -41,6 +41,8 @@ function click(){
 function music(){
     var music = document.getElementById("music");
     music.play();
+    var soundeffect = document.getElementById("soundeffect");
+    soundeffect.play();
 }
 
 $(document).ready(function() {
