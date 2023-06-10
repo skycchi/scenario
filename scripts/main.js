@@ -68,11 +68,6 @@ barba.init({
           'index1','index2','index3','page1','page4',
       ]
     },
-      to:{
-          namespace:[
-            'index1','index2','index3','page1','page4',
-          ]
-      }
       
     leave(data) {
       return gsap.to(data.current.container, {
