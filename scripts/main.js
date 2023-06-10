@@ -65,15 +65,9 @@ barba.init({
     name: 'opacity-transition',
     from: {
       namespace: [
-        'index1','index2','index3','page1',
+        'index1','index2','index3','page1', 'page4',
       ]
     },
-      to:{
-          namespace:[
-              'page4',
-          ]
-      }
-
       
     leave(data) {
       return gsap.to(data.current.container, {
