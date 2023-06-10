@@ -264,6 +264,23 @@ header{
     background-color:black;
 }
 
+.level1{
+    border-image-slice:1;
+    border-image-width:4px;
+    padding:10px 10px 5px 10px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-style:solid;
+    width:90px;
+    position:fixed;
+    right:-4px;
+    top:85px;
+    padding:10px;
+    box-sizing:border-box;
+    text-align:center;
+    background-color:black;
+}
+
 .dome img{
     position: fixed;
     top:0px;
@@ -272,6 +289,33 @@ header{
     height:100%;
     z-index:-1;
     animation: fadein 0.5s;
+}
+
+.screen{
+    box-shadow: 0px 0px 15px 5px #ffffff;
+    position:fixed;
+    bottom:140px;
+    margin:auto;
+    max-width:600px;
+    height:400px;
+    border-image-slice:1;
+    border-image-width:4px;
+    padding:60px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-style:solid;
+    left:0px;
+    right:0px;
+    background-color:black;
+    animation: fadein 0.5s;
+}
+
+.screentitle{
+    font-size:50px;
+    text-align:center; 
+}
+
+.screeninfo{
 }
 
 @keyframes fadein {
