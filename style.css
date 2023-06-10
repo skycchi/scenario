@@ -185,7 +185,7 @@ a{
 .spritewrap{
     display:flex;
     overflow:auto;
-    justify-content: space-between;
+    justify-content: space-around;
     width: -moz-available;        
     width: -webkit-fill-available;
     width: fill-available;
@@ -202,6 +202,13 @@ a{
     margin:auto;
 }
 
+.spritemid img{
+    width:500px;
+    display:block;
+    margin:auto;
+    z-index:-1;
+}
+
 header{
     z-index:9999999999;
 }
@@ -215,7 +222,7 @@ header{
     border-style:solid;
     box-sizing:border-box;
     background-color:black;
-    width:500px;
+    width:400px;
     z-index:9999999999;
     position:absolute;
     top:-4px;
