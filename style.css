@@ -346,6 +346,10 @@ table img{
     margin-top:-10px;
 }
 
+#stats{
+    display:none;
+}
+
 img {
     user-drag: none;
     -webkit-user-drag: none;
