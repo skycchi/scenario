@@ -31,7 +31,7 @@ function animate(){
 }
 
 function click(){
-    var click = new Audio("https://files.catbox.moe/i3b5jy.ogg");
+    var click = new Audio("/music/sound effects/click.ogg");
     
     document.onclick = function() {
         click.play();

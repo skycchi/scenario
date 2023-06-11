@@ -27,7 +27,7 @@ body{
     border-image-slice:1;
     border-image-width:2px;
     border-image-repeat:stretch stretch;
-    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-image-source:url("/images/border.png");
     border-style:solid;
     z-index: 9999;
 }
@@ -142,7 +142,7 @@ a{
     border-image-width:2px;
     padding:35px 10px 0px 10px;
     border-image-repeat:stretch stretch;
-    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-image-source:url("/images/border.png");
     border-style:solid;
     box-sizing:border-box;
     background-color:black;
@@ -218,7 +218,7 @@ header{
     border-image-width:2px;
     padding:10px 10px 5px 10px;
     border-image-repeat:stretch stretch;
-    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-image-source:url("/images/border.png");
     border-style:solid;
     box-sizing:border-box;
     background-color:black;
@@ -236,7 +236,7 @@ header{
     border-image-width:2px;
     padding:10px 10px 5px 10px;
     border-image-repeat:stretch stretch;
-    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-image-source:url("/images/border.png");
     border-style:solid;
     width:180px;
     position:absolute;
@@ -253,7 +253,7 @@ header{
     border-image-width:2px;
     padding:10px 10px 5px 10px;
     border-image-repeat:stretch stretch;
-    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-image-source:url("/images/border.png");
     border-style:solid;
     width:90px;
     position:absolute;
@@ -269,7 +269,7 @@ header{
     border-image-width:2px;
     padding:10px 10px 5px 10px;
     border-image-repeat:stretch stretch;
-    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-image-source:url("/images/border.png");
     border-style:solid;
     width:90px;
     position:fixed;
@@ -301,7 +301,7 @@ header{
     border-image-width:2px;
     padding:20px;
     border-image-repeat:stretch stretch;
-    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-image-source:url("/images/border.png");
     border-style:solid;
     left:0px;
     right:0px;
@@ -332,7 +332,7 @@ table img{
     border-image-slice:1;
     border-image-width:2px;
     border-image-repeat:stretch stretch;
-    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-image-source:url("/images/border.png");
     border-style:solid;
 }
 
@@ -343,7 +343,7 @@ table img{
     z-index:-2;
     display:block;
     background-size:100%;
-    background-image:url(https://files.catbox.moe/kitpxs.png);
+    background-image:url("/images/backgrounds/platform.png");
     margin-top:-10px;
 }
 
