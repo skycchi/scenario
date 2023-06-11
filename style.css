@@ -25,7 +25,7 @@ body{
     background-color:black;
     color:white;
     border-image-slice:1;
-    border-image-width:4px;
+    border-image-width:2px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
     border-style:solid;
@@ -139,7 +139,7 @@ a{
     height:120px;
     overflow:hidden;
     border-image-slice:1;
-    border-image-width:4px;
+    border-image-width:2px;
     padding:30px 10px 0px 10px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
@@ -215,7 +215,7 @@ header{
 
 .musicplayer{
     border-image-slice:1;
-    border-image-width:4px;
+    border-image-width:2px;
     padding:10px 10px 5px 10px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
@@ -233,7 +233,7 @@ header{
 
 .date{
     border-image-slice:1;
-    border-image-width:4px;
+    border-image-width:2px;
     padding:10px 10px 5px 10px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
@@ -250,7 +250,7 @@ header{
 
 .level{
     border-image-slice:1;
-    border-image-width:4px;
+    border-image-width:2px;
     padding:10px 10px 5px 10px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
@@ -266,7 +266,7 @@ header{
 
 .level1{
     border-image-slice:1;
-    border-image-width:4px;
+    border-image-width:2px;
     padding:10px 10px 5px 10px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
@@ -298,7 +298,7 @@ header{
     margin:auto;
     max-width:600px;
     border-image-slice:1;
-    border-image-width:4px;
+    border-image-width:2px;
     padding:20px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
@@ -330,7 +330,7 @@ table{
 table img{
     padding:10px 10px 0px 10px;
     border-image-slice:1;
-    border-image-width:4px;
+    border-image-width:2px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
     border-style:solid;
