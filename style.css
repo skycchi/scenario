@@ -323,7 +323,7 @@ header{
 
 table{
     margin:auto;
-    border-spacing: 30px 0px;
+    border-spacing: 30px 30px;
 }
 
 table img{
@@ -348,6 +348,31 @@ table img{
 
 #stats{
     display:none;
+}
+
+.bar{
+    width:100%;
+    border-image-slice:1;
+    border-image-width:2px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("/images/border.png");
+    border-style:solid;
+    overflow: hidden;
+}
+
+.hp{
+    width:100%;
+    background-color:#000;
+}
+
+.stamina{
+    width:100%;
+    background-color:#000;
+}
+
+.progress{
+    display:flex;
+    align-items:center;
 }
 
 img {
