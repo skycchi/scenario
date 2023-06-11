@@ -297,10 +297,9 @@ header{
     bottom:140px;
     margin:auto;
     max-width:600px;
-    height:400px;
     border-image-slice:1;
     border-image-width:4px;
-    padding:60px;
+    padding:20px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
     border-style:solid;
@@ -321,6 +320,20 @@ header{
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+table{
+    margin:auto;
+    border-spacing: 30px 0px;
+}
+
+table img{
+    padding:10px 10px 0px 10px;
+    border-image-slice:1;
+    border-image-width:4px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("https://files.catbox.moe/p2cajb.png");
+    border-style:solid;
 }
 
 img {
