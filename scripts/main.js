@@ -65,9 +65,9 @@ barba.init({
       debug: true,
       sync:true,
     name: 'opacity-transition',
-    to: {
+    from: {
       namespace: [
-          'index1','index2','index3','page1','page4'
+          'index1','index2','index3','page1',
       ]
     },
       
