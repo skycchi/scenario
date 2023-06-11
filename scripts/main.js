@@ -62,10 +62,12 @@ barba.hooks.after(() => {
 barba.init({
    prevent: ({ el }) => el.classList && el.classList.contains('prevent'),
   transitions: [{
+      debug: true,
+      sync:true,
     name: 'opacity-transition',
-    from: {
+    to: {
       namespace: [
-          'index1','index2','index3','page1','page3'
+          'index1','index2','index3','page1',
       ]
     },
       
