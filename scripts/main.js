@@ -70,11 +70,11 @@ barba.init({
    prevent: ({ el }) => el.classList && el.classList.contains('prevent'),
   transitions: [{
     name: 'opacity-transition',
-    from: {
+/*    from: {
       namespace: [
           'index1','index2','index3','page1','page2','page3','page4'
       ]
-    },
+    },*/
       
     leave(data) {
       return gsap.to(data.current.container, {

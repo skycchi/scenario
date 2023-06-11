@@ -209,6 +209,13 @@ a{
     z-index:-1;
 }
 
+.creation img{
+    width:450px;
+    display:block;
+    margin:auto;
+    z-index:-1;
+}
+
 header{
     z-index:9999999999;
 }
