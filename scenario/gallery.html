@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GALLERY.</title>
+        <link rel="shortcut icon" href="https://files.catbox.moe/h33w19.png">
+        <link rel="stylesheet" href="/style.css">
+        <link href="https://rawcdn.githack.com/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://static.tumblr.com/rtrqcib/VGGnlh8rf/jquery.style-my-tooltips.min.js"></script>
+        <script>(function($){$(document).ready(function(){$("a[title]").style_my_tooltips({tip_follows_cursor:true,tip_delay_time:0,tip_fade_speed:0,attribute:"title"});});})(jQuery);</script>
+    </head>
+    <style>
+        body{
+            margin:50px;
+            overflow:scroll;
+        }
+        
+        img{
+            border-image-slice:1;
+            border-image-width:4px;
+            border-image-outset:10px;
+            border-image-repeat:stretch stretch;
+            border-image-source:url("https://files.catbox.moe/p2cajb.png");
+            border-style:solid;
+            box-sizing:border-box; 
+            display:block;
+        }
+    </style>
+    <body>
+        Gallery
+        <div class="pictures">
+            <a href='/images/art/whenyougettrappedinthedome.png' title="By V"><img src='/images/art/whenyougettrappedinthedome.png'></a>
+            <a href="/images/art/boba.png" title="By V"><img src='/images/art/boba.png'></a>
+            <a href="/images/sky.png" title="By V"><img src='/images/sky.png'></a>
+            <a href="/images/gabriel.png" title="By V"><img src="/images/gabriel.png"></a>
+            <a href="/images/len.png" title="By V"><img src="/images/len.png"></a>
+            <a href="/images/gabrielicon.png" title="By Adilene"><img src="/images/gabrielicon.png"></a>
+            <a href="/images/lenicon.png" title="By Adilene"><img src="/images/lenicon.png"></a>
+            <a href="/images/art/hng2.png" title="By @hikarunogo on Tumblr"><img src="/images/art/hng2.png"></a>
+            <a href="/images/art/hng1.png" title="By @hikarunogo on Tumblr"><img src="/images/art/hng1.png"></a>
+            <a href="/images/art/k2.jpg" title="By @koideres on Tumblr"><img src="/images/art/k2.jpg"></a>
+            <a href="/images/art/k1.jpg" title="By @koideres on Tumblr"><img src="/images/art/k1.jpg"></a>
+            <a href="/images/art/a1.png"><img src="/images/art/a1.png"></a>
+        </div>
+        
+        
+        <script src="/scripts/jquery-tjgallery.js"></script>
+        <script>
+            $(document).ready(function(){
+                /* Waiting for the pictures to load */
+                $(window).load(function(){
+                    $('.pictures').tjGallery({margin: 50});
+                })
+            });
+        </script>
+        
+        <script>
+            var click = new Audio("/music/sound effects/click.ogg");
+            document.onclick = function() {
+                click.play();
+            }
+            click.volume = 0.5;
+        </script>
+    </body>
+</html>
