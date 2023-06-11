@@ -57,7 +57,14 @@ barba.hooks.after(() => {
     music();
 });   
 
-
+function stats() {
+    var x = document.getElementById("stats");
+    if (x.style.display === "none") {
+    x.style.display = "block";
+    } else {
+    x.style.display = "none";
+    }
+}
 
 barba.init({
    prevent: ({ el }) => el.classList && el.classList.contains('prevent'),
@@ -65,7 +72,7 @@ barba.init({
     name: 'opacity-transition',
     from: {
       namespace: [
-          'index1','index2','index3','page1','page3'
+          'index1','index2','index3','page1','page3','page4'
       ]
     },
       

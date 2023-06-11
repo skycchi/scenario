@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>3</title>
+        <title>5</title>
         <link rel="shortcut icon" href="https://files.catbox.moe/h33w19.png">
         <link rel="stylesheet" href="/style.css">
         <script src="https://kit.fontawesome.com/37b69e3f02.js" crossorigin="anonymous"></script>
@@ -16,20 +16,33 @@
         <main data-barba="container" class="container">
             
             <audio autoplay loop id="music">
-                <source src="">
+                <source src="/music/Daitenshi%20no%20Ibuki.mp3">
             </audio>
             
             <header>
                 <div class="musicplayer">
-                    Now Playing - 
+                    Now Playing - 大天使の息吹
                 </div>
                 <div class="date">
-                    5/5
+                    May 5
                 </div>
-                <!--<div class="level">
-                    LV 0
-                </div>-->
+                <div class="level" onclick="stats()">
+                    LV 1
+                </div>
             </header>
+            
+            <div id="stats">
+                <div class="screen">
+                    <div class="screentitle">Status</div>
+                    <div class="screeninfo">
+                        <table>
+                            <tr><td><img src="/images/gabrielicon.png"></td><td>Name: Gabriel Espinosa<br>Sex: M<br>Age: 18<br>Height: 5'9<br>Weight: 147 lbs<br>Hair: Black<br>Eyes: Black<br>HP: 100<br>Stamina: 100<br>Level: 1</td></tr>
+                        </table>
+                    </div>
+                    <div class="screentitle">Weapon: Sniper Rifle</div>
+                    <div class="screentitle">Ability: Precision</div>
+                </div>
+            </div>
             
             <div class="spritewrap">
                 
@@ -87,9 +100,6 @@
                 </div>
                 
                 <div class="box hidden">
-                    <div class="dome">
-                        <img src="https://files.catbox.moe/oqas83.png">
-                    </div>
                     <div class="inner">
                         <div class="header">7/</div>
                         
@@ -98,9 +108,6 @@
                 </div>
                 
                 <div class="box hidden">
-                    <div class="dome">
-                        <img src="https://files.catbox.moe/8i7r77.png">
-                    </div>
                     <div class="inner">
                         <div class="header">8/</div>
                         
