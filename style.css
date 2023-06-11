@@ -140,7 +140,7 @@ a{
     overflow:hidden;
     border-image-slice:1;
     border-image-width:2px;
-    padding:30px 10px 0px 10px;
+    padding:35px 10px 0px 10px;
     border-image-repeat:stretch stretch;
     border-image-source:url("https://files.catbox.moe/p2cajb.png");
     border-style:solid;
