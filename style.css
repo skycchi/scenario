@@ -336,6 +336,17 @@ table img{
     border-style:solid;
 }
 
+.bg{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    z-index:-2;
+    display:block;
+    background-size:100%;
+    background-image:url(https://files.catbox.moe/kitpxs.png);
+    margin-top:-10px;
+}
+
 img {
     user-drag: none;
     -webkit-user-drag: none;
