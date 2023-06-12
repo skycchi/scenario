@@ -186,6 +186,8 @@ a{
     display:flex;
     overflow:auto;
     justify-content: space-around;
+    align-items:center;
+    align-content: center;
     width: -moz-available;        
     width: -webkit-fill-available;
     width: fill-available;
@@ -380,6 +382,100 @@ table img{
 .progress{
     display:flex;
     align-items:center;
+}
+
+.attack{
+}
+
+#attack {
+	background:black;
+    color:white;
+	padding: 10px;
+	margin-bottom: 15px;
+	display: block;
+    position:absolute;
+    bottom:125px;
+    left:120px;
+    border-image-slice:1;
+    border-image-width:2px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("/images/border.png");
+    border-style:solid;
+    font-family:'dead end';
+    font-size:20px;
+}
+
+#counter{
+    background:black;
+    color:white;
+	padding: 10px;
+	margin-bottom: 15px;
+	display: block;
+    position:absolute;
+    bottom:125px;
+    right:120px;
+    border-image-slice:1;
+    border-image-width:2px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("/images/border.png");
+    border-style:solid;
+    font-family:'dead end';
+    font-size:20px;
+}
+
+#yourHealth  {
+	position: absolute;
+    top:0px;
+    left:0px;
+	height: 30px;
+	width: 250px;
+	border-image-slice:1;
+    border-image-width:2px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("/images/border.png");
+    border-style:solid;
+	margin-right: 20px;
+	display: inline-block;
+}
+
+#compHealth{
+    position:absolute;
+    right:0px;
+    top:0px;
+	height: 30px;
+	width: 250px;
+	border-image-slice:1;
+    border-image-width:2px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("/images/border.png");
+    border-style:solid;
+	display: inline-block;
+}
+
+#yourHealthBar, #compHealthBar {
+	height: 100%;
+	width: 100%;
+	background: white;
+}
+
+#announcements {
+}
+
+.box2{
+    height:120px;
+    border-image-slice:1;
+    border-image-width:2px;
+    padding:10px;
+    border-image-repeat:stretch stretch;
+    border-image-source:url("/images/border.png");
+    border-style:solid;
+    box-sizing:border-box;
+    background-color:black;
+    text-align: left;
+    width: -moz-available;        
+    width: -webkit-fill-available;
+    width: fill-available;
+    overflow:auto;
 }
 
 img {

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>6</title>
+        <link rel="shortcut icon" href="https://files.catbox.moe/h33w19.png">
+        <link rel="stylesheet" href="/style.css">
+        <script src="https://kit.fontawesome.com/37b69e3f02.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/@barba/core"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    </head>
+    <body data-barba="wrapper">
+        
+        <main data-barba="container" class="container">
+            
+            <audio autoplay loop id="music">
+                <source src="/music/Daitenshi%20no%20Ibuki.mp3">
+            </audio>
+            
+            <header>
+                <div class="musicplayer">
+                    Now Playing - 大天使の息吹
+                </div>
+            </header>
+            
+            <div class="spritewrap">
+                <div class="creation"><img src="/images/creation.png"></div>
+            </div>
+            
+            <div class="attack">
+                <div id="yourHealth"><div id="yourHealthBar"></div><br>Len</div>
+                <div id="compHealth"><div id="compHealthBar"></div><br>Creation</div>
+                <button id="attack" onclick="fight(id)">Attack</button>
+                <button id="counter" onclick="fight(id)">Counter</button>
+            </div>
+            
+            <div class="dialoguewrap">
+                <span class="arrowleft"><a href="/pages/page5.html" data-direction="prev"><img src="/images/right.png"></a></span>
+                
+                <div class="box2">
+                    <div id="announcements">Gabriel is too scared to move!<br></div>
+                </div>
+                
+                <div class="arrowwrap">
+                    <span class="arrowright" style="visibility:hidden"><a href="/pages/page6.html" data-direction="next"><img src="/images/right.png"></a></span>
+                </div>
+            </div>
+            
+            <script src="/scripts/battle.js"></script>
+            
+        </main>
+        
+        <script src="/scripts/main.js"></script> 
+        <script>barba.Pjax.start();</script>
+        
+    </body>
+</html>
