@@ -66,26 +66,21 @@ function stats() {
     }
 }
 
+
 barba.init({
    prevent: ({ el }) => el.classList && el.classList.contains('prevent'),
-        views: [{
-        namespace: 'page6',
-        beforeEnter({ next }) {
-
-        // load your script
-        let script = document.createElement('script');
-        script.src = '/scripts/battle.js';
-        next.container.appendChild(script);
-        }, 
-    }],
-  transitions: [{
+//    views: [{
+//        namespace: 'page6',
+//        beforeEnter({ next }) {
+//
+//        let script = document.createElement('script');
+//        script.src = '/scripts/battle.js';
+//        next.container.appendChild(script);
+//        }, 
+//    }],
+    
+    transitions: [{
     name: 'opacity-transition',
-/*    from: {
-      namespace: [
-          'index1','index2','index3','page1','page2','page3','page4'
-      ]
-    },*/
-      
     leave(data) {
       return gsap.to(data.current.container, {
         opacity: 0,
