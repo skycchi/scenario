@@ -377,18 +377,13 @@ function battle(){
 }
 
 $(document).ready(function() {
-    battle();
     click();
     shuffle();
     animate();
-    
     music(); 
-    
-
 });
 
 barba.hooks.after(() => {
-    battle();
     click();
     shuffle();
     animate();
