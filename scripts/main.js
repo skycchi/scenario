@@ -50,7 +50,7 @@ function ani() {
     document.getElementById("attack").disabled = true;
     $(".creation").delay(5000).fadeOut();
     setTimeout(function() {
-        document.getElementById("announcements").innerHTML += "The Creation was defeated! Len gained 1 level and 100 points."
+        document.getElementById("announcements").innerHTML += "The Creation was defeated! Len gains 1 level and 100 points."
     }, 5000);
     
 }
