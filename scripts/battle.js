@@ -15,7 +15,7 @@ var attacks = {
 	'Gabriel': ['Shoot','Defend','Dodge'],
 
 	//Enemies
-	'Creation':['Slash','Dodge','Heal'],
+	'Creation':['God Hand','Radiance','Dodge'],
 };
 
 //Make Attack Buttons
@@ -40,9 +40,9 @@ var updatephealth = function(v) {
 		if(playerdefend==1) {v = Math.floor(v/4)}
 		if(playerdefend==2) {if(Math.random() > 0.5) v = 0;}
 		var t = "Dealt " + Math.abs(v) + " damage.";
-		if(playerdefend===1) t+=" "+player+" defended the attack!";
-		if(playerdefend===2&&v!==0) t+=" "+player+" attempted to dodge, but failed!";
-		if(playerdefend===2&&v===0) t+=" "+player+" successfully dodged the attack!";
+		if(playerdefend===1) t+=" "+player+" defends the attack!";
+		if(playerdefend===2&&v!==0) t+=" "+player+" attempts to dodge, but fails!";
+		if(playerdefend===2&&v===0) t+=" "+player+" successfully dodges the attack!";
 		playerdefend = 0;
 	}
 	playerhp += v;
@@ -58,9 +58,9 @@ var updateehealth = function(v) {
 		if(enemydefend==1) {v = Math.floor(v/4)}
 		if(enemydefend==2) {if(Math.random() > 0.5) v = 0;}
 		var t = "Dealt " + Math.abs(v) + " damage.";
-		if(enemydefend===1) t+=" The "+enemy+" defended the attack!";
-		if(enemydefend===2&&v!==0) t+=" The "+enemy+" attempted to dodge, but failed!";
-		if(enemydefend===2&&v===0) t+=" The "+enemy+" successfully dodged the attack!";
+		if(enemydefend===1) t+=" The "+enemy+" defends the attack!";
+		if(enemydefend===2&&v!==0) t+=" The "+enemy+" attempts to dodge, but fails!";
+		if(enemydefend===2&&v===0) t+=" The "+enemy+" successfully dodges the attack!";
 		enemydefend = 0;
 	}
 	enemyhp += v;
@@ -109,19 +109,19 @@ var buttonpress = function(t) {
 		
 		//Enemy moves
 		if(t==="Slash") {
-			updatenotes("The "+enemy+" used Slash. "+updatephealth(-20 +Math.floor(Math.random()*20-10) ));
+			updatenotes("The "+enemy+" uses Slash. "+updatephealth(-20 +Math.floor(Math.random()*20-10) ));
 		}
 		if(t==="Stab") {
 			if(Math.random() > 0.5)
-				updatenotes("The "+enemy+" used Stab. "+updatephealth(-40 +Math.floor(Math.random()*30-15) ));
+				updatenotes("The "+enemy+" uses Stab. "+updatephealth(-40 +Math.floor(Math.random()*30-15) ));
 			else
-				updatenotes("The "+enemy+" used Stab, and missed.");
+				updatenotes("The "+enemy+" uses Stab, and misses.");
 		}
 		if(t==="Shoot") {
 			if(Math.random() > 0.25)
-				updatenotes("The "+enemy+" used Shoot. "+updatephealth(-30 +Math.floor(Math.random()*30-15) ));
+				updatenotes("The "+enemy+" uses Shoot. "+updatephealth(-30 +Math.floor(Math.random()*30-15) ));
 			else
-				updatenotes("The "+enemy+" used Shoot, and missed.");
+				updatenotes("The "+enemy+" uses Shoot, and misses.");
 		}
 		if(t==="Dodge") {
 			updatenotes("The "+enemy+" prepares to dodge an attack.");
@@ -131,28 +131,28 @@ var buttonpress = function(t) {
 			updatenotes("The "+enemy+" prepares to defend an attack.");
 			enemydefend=1;
 		}
-		if(t==="Fireball") {
+		if(t==="Radiance") {
 			if(Math.random() > 0.25)
-				updatenotes("The "+enemy+" used Fireball. "+updatephealth(-30 +Math.floor(Math.random()*30-15) ));
+				updatenotes("The "+enemy+" uses Radiance. "+updatephealth(-30 +Math.floor(Math.random()*30-15) ));
 			else
-				updatenotes("The "+enemy+" used Fireball, and missed.");
+				updatenotes("The "+enemy+" uses Radiance, and misses.");
 		}
-		if(t==="Thunder") {
+		if(t==="God Hand") {
 			if(Math.random() > 0.75)
-				updatenotes("The "+enemy+" used Thunder. "+updatephealth(-50 +Math.floor(Math.random()*40-20) ));
+				updatenotes("The "+enemy+" uses God Hand. "+updatephealth(-50 +Math.floor(Math.random()*40-20) ));
 			else
-				updatenotes("The "+enemy+" used Thunder, and missed.");
+				updatenotes("The "+enemy+" uses God Hand, and misses.");
 		}
 		if(t==="Heal") {
 			var heal = 20;
-			updatenotes("The "+enemy+" used Heal, and recovered "+heal+" HP!");
+			updatenotes("The "+enemy+" uses Heal, and recovered "+heal+" HP!");
 			updateehealth(heal);
 		}
 		if(t==="Dark Arts") {
 			if(Math.random() > 0.85)
-				updatenotes("The "+enemy+" used Dark Arts. "+updatephealth(-80 +Math.floor(Math.random()*300-150) ));
+				updatenotes("The "+enemy+" uses Dark Arts. "+updatephealth(-80 +Math.floor(Math.random()*300-150) ));
 			else
-				updatenotes("The "+enemy+" used Dark Arts, and missed.");
+				updatenotes("The "+enemy+" uses Dark Arts, and misses.");
 		}
 		if(playerhp>0)
 			makeattacks();
@@ -163,19 +163,19 @@ var buttonpress = function(t) {
 	//Player moves
 	else {
 		if(t==="Slash") {
-			updatenotes(player+" used Slash. "+updateehealth(-20 +Math.floor(Math.random()*20-10) ));
+			updatenotes(player+" uses Slash. "+updateehealth(-20 +Math.floor(Math.random()*20-10) ));
 		}
 		if(t==="Stab") {
 			if(Math.random() > 0.5)
-				updatenotes(player+" used Stab. "+updateehealth(-40 +Math.floor(Math.random()*30-15) ));
+				updatenotes(player+" uses Stab. "+updateehealth(-40 +Math.floor(Math.random()*30-15) ));
 			else
-				updatenotes(player+" used Stab, and missed.");
+				updatenotes(player+" uses Stab, and misses.");
 		}
 		if(t==="Shoot") {
 			if(Math.random() > 0.25)
-				updatenotes(player+" used Shoot. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
+				updatenotes(player+" uses Shoot. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
 			else
-				updatenotes(player+" used Shoot, and missed.");
+				updatenotes(player+" uses Shoot, and misses.");
 		}
 		if(t==="Dodge") {
 			updatenotes(player+" prepares to dodge an attack.");
@@ -187,19 +187,19 @@ var buttonpress = function(t) {
 		}
 		if(t==="Fireball") {
 			if(Math.random() > 0.25)
-				updatenotes(player+" used Fireball. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
+				updatenotes(player+" uses Fireball. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
 			else
-				updatenotes(player+" used Fireball, and missed.");
+				updatenotes(player+" uses Fireball, and misses.");
 		}
 		if(t==="Thunder") {
 			if(Math.random() > 0.75)
-				updatenotes(player+" used Thunder. "+updateehealth(-50 +Math.floor(Math.random()*40-20) ));
+				updatenotes(player+" uses Thunder. "+updateehealth(-50 +Math.floor(Math.random()*40-20) ));
 			else
-				updatenotes(player+" used Thunder, and missed.");
+				updatenotes(player+" uses Thunder, and misses.");
 		}
 		if(t==="Heal") {
 			var heal = 20;
-			updatenotes(player+" used Heal, and recovered "+heal+" HP!");
+			updatenotes(player+" uses Heal, and recovered "+heal+" HP!");
 			updatephealth(heal);
 		}
 		makebutton("Continue");
