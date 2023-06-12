@@ -69,15 +69,15 @@ function stats() {
 
 barba.init({
    prevent: ({ el }) => el.classList && el.classList.contains('prevent'),
-//    views: [{
-//        namespace: 'page6',
-//        beforeEnter({ next }) {
-//
-//        let script = document.createElement('script');
-//        script.src = '/scripts/battle.js';
-//        next.container.appendChild(script);
-//        }, 
-//    }],
+    views: [{
+        namespace: 'page6',
+        afterEnter({ next }) {
+
+        let script = document.createElement('script');
+        script.src = '/scripts/battle.js';
+        next.container.appendChild(script);
+        }, 
+    }],
     
     transitions: [{
     name: 'opacity-transition',
