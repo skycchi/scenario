@@ -21,8 +21,9 @@ var attacks = {
 //Make Attack Buttons
 var makeattacks = function() {
 	var thearray = attacks[player];
-	for(var i=0;i<thearray.length;i++)
+	for(var i=0;i<thearray.length;i++){
 		makebutton(thearray[i]);
+    }
 }
 
 //Health Values
@@ -36,7 +37,7 @@ var enemydefend = 0;
 //Update player health
 var updatephealth = function(v) {
 	if(v<0) {
-		if(playerdefend==1) {v = Math.floor(v/4)};
+		if(playerdefend==1) {v = Math.floor(v/4)}
 		if(playerdefend==2) {if(Math.random() > 0.5) v = 0;}
 		var t = "Dealt " + Math.abs(v) + " damage.";
 		if(playerdefend===1) t+=" "+player+" defended the attack!";
@@ -54,12 +55,12 @@ var updatephealth = function(v) {
 //Update enemy health
 var updateehealth = function(v) {
 	if(v<0) {
-		if(enemydefend==1) {v = Math.floor(v/4)};
+		if(enemydefend==1) {v = Math.floor(v/4)}
 		if(enemydefend==2) {if(Math.random() > 0.5) v = 0;}
 		var t = "Dealt " + Math.abs(v) + " damage.";
-		if(enemydefend===1) t+="The "+enemy+" defended the attack!";
-		if(enemydefend===2&&v!==0) t+="The "+enemy+" attempted to dodge, but failed!";
-		if(enemydefend===2&&v===0) t+="The "+enemy+" successfully dodged the attack!";
+		if(enemydefend===1) t+=" The "+enemy+" defended the attack!";
+		if(enemydefend===2&&v!==0) t+=" The "+enemy+" attempted to dodge, but failed!";
+		if(enemydefend===2&&v===0) t+=" The "+enemy+" successfully dodged the attack!";
 		enemydefend = 0;
 	}
 	enemyhp += v;
@@ -210,7 +211,7 @@ var makebutton = function(t) {
 	var button = $('<button/>',{
 		text: t,
 		click: function () { buttonpress(t); }
-	}).addClass("btn btn-lg btn-default");
+	});
 	attacklist.append(button);
 };
 
