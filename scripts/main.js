@@ -43,6 +43,18 @@ function music(){
     music.play();
 }
 
+function ani() {
+    document.getElementById("compHealthBar").className = 'enemyhp';
+    document.getElementById("yourHealthBar").className = 'playerhp';
+    document.getElementById("announcements").innerHTML += "Len jumps into action. He chips away at the Creation's health by summoning knives around him and willing them to attack. Other brave people soon join in with their weapons.<br>"
+    document.getElementById("attack").disabled = true;
+    $(".creation").delay(5000).fadeOut();
+    setTimeout(function() {
+        document.getElementById("announcements").innerHTML += "The Creation was defeated! Len gained 1 level and 100 points."
+    }, 5000);
+    
+}
+
 $(document).ready(function() {
     click();
     shuffle();
