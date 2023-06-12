@@ -1,5 +1,4 @@
-function battle(){
-    //Global Variables
+ //Global Variables
     var player;
     var player2;
     var enemy;
@@ -329,4 +328,3 @@ function battle(){
         makeattacks2();
 
     });
-}
