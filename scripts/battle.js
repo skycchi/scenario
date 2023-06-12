@@ -1,18 +1,23 @@
 //Global Variables
 var player;
+var player2;
 var enemy;
 
 //Important Elements
 var playerhealth;
+var playerhealth2;
+var playerstamina;
+var playerstamina2;
 var enemyhealth;
 var battlenotes;
 var attacklist;
+var attacklist2;
 
 //Attack List (JSON defining all attacks for all class types)
 var attacks = {
 	//Player Classes
-	'Len': ['Slash','Stab','Dodge'],
-	'Gabriel': ['Shoot','Defend','Dodge'],
+	'Len': ['Slash','Stab','Acceleration'],
+	'Gabriel': ['Shoot','Defend','Precision'],
 
 	//Enemies
 	'Creation':['God Hand','Radiance','Dodge'],
@@ -26,12 +31,23 @@ var makeattacks = function() {
     }
 }
 
+/*var makeattacks2 = function() {
+	var thearray = attacks[player2];
+	for(var i=0;i<thearray.length;i++){
+		makebutton2(thearray[i]);
+    }
+}*/
+
 //Health Values
 var playerhp = 100;
+var playerhp2 = 100;
+var playersp = 100;
+var playersp2 = 100;
 var enemyhp = 100;
 
 //Defend Flags
 var playerdefend = 0;
+var playerdefend2 = 0;
 var enemydefend = 0;
 
 //Update player health
@@ -49,6 +65,24 @@ var updatephealth = function(v) {
 	if(playerhp<0) playerhp = 0;
 	if(playerhp>100) playerhp = 100;
 	playerhealth.text(playerhp);
+	return t;
+}
+
+//Update player health 2
+var updatephealth2 = function(v) {
+	if(v<0) {
+		if(playerdefend2==1) {v = Math.floor(v/4)}
+		if(playerdefend2==2) {if(Math.random() > 0.5) v = 0;}
+		var t = "Dealt " + Math.abs(v) + " damage.";
+		if(playerdefend2===1) t+=" "+player2+" defends the attack!";
+		if(playerdefend2===2&&v!==0) t+=" "+player2+" attempts to dodge, but fails!";
+		if(playerdefend2===2&&v===0) t+=" "+player2+" successfully dodges the attack!";
+		playerdefend2 = 0;
+	}
+	playerhp2 += v;
+	if(playerhp2<0) playerhp2 = 0;
+	if(playerhp2>100) playerhp2 = 100;
+	playerhealth2.text(playerhp2);
 	return t;
 }
 
@@ -86,6 +120,7 @@ var buttonpress = function(t) {
 	
 	//Remove Buttons
 	attacklist.empty();
+    /*attacklist2.empty();*/
 	
 	//Check Health
 	if(enemyhp===0) {
@@ -96,6 +131,10 @@ var buttonpress = function(t) {
 		updatenotes(player+" died!");
 		return
 	}
+    /*if(playerhp2===0) {
+		updatenotes(player2+" died!");
+		return
+	}*/
 	
 	//Continue
 	if(t==="Continue") {
@@ -156,6 +195,8 @@ var buttonpress = function(t) {
 		}
 		if(playerhp>0)
 			makeattacks();
+        if(playerhp2>0)
+			makeattacks2();
 		else
 			makebutton("Continue");
 	}
@@ -173,9 +214,21 @@ var buttonpress = function(t) {
 		}
 		if(t==="Shoot") {
 			if(Math.random() > 0.25)
-				updatenotes(player+" uses Shoot. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
+				updatenotes(player2+" uses Shoot. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
 			else
-				updatenotes(player+" uses Shoot, and misses.");
+				updatenotes(player2+" uses Shoot, and misses.");
+		}
+        if(t==="Precision") {
+				updatenotes(player2+" uses Precision. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
+		}
+        if(t==="Acceleration") {
+            if(playersp>0){
+				updatenotes(player+" uses Acceleration. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
+                playersp -= 20;
+                playerstamina.text(playersp);
+            }
+            else
+                updatenotes('SP is too low to use Acceleration!');
 		}
 		if(t==="Dodge") {
 			updatenotes(player+" prepares to dodge an attack.");
@@ -215,6 +268,14 @@ var makebutton = function(t) {
 	attacklist.append(button);
 };
 
+/*var makebutton2 = function(t) {
+	var button = $('<button/>',{
+		text: t,
+		click: function () { buttonpress(t); }
+	});
+	attacklist2.append(button);
+};*/
+
 //Ready
 $( document ).ready(function() {
 	
@@ -226,9 +287,12 @@ $( document ).ready(function() {
 	//Get important elements
 	playerhealth = $("#playerhealth");
     playerhealth2 = $("#playerhealth2");
+    playerstamina = $("#playerstamina");
+    playerstamina2 = $("#playerstamina2");
 	enemyhealth = $("#enemyhealth");
 	battlenotes = $("#battlenotes");
 	attacklist = $("#attacklist");
+    attacklist2 = $("#attacklist2");
 	
 	//Update text
 	$("#playertitle").text(player);
@@ -237,5 +301,6 @@ $( document ).ready(function() {
 	
 	//Begin battle
 	makeattacks();
+//    makeattacks2();
 	
 });
