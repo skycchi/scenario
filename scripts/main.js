@@ -43,7 +43,6 @@ function music(){
     music.play();
 }
 
-function init(){
 //Global Variables
     var player;
     var player2;
@@ -368,17 +367,12 @@ function init(){
         $("#playertitle").text(player);
         $("#playertitle2").text(player2);
         $("#enemytitle").text(enemy);
-
-        //Begin battle
-        makeattacks();
-        makeattacks2();
-
     });
-}
 
 $(document).ready(function() {
     click();
-    init();
+    makeattacks();
+    makeattacks2();
     shuffle();
     animate();
     music(); 
@@ -386,7 +380,8 @@ $(document).ready(function() {
 
 barba.hooks.after(() => {
     click();
-    init();
+    makeattacks();
+    makeattacks2();
     shuffle();
     animate();
     music();
