@@ -423,15 +423,15 @@ barba.init({
       });
     },
   }],
-//    views: [{
-//        namespace: 'page6',
-//        beforeEnter({ next }) {
-//
-//        // load your script
-//        let script = document.createElement('script');
-//        script.src = '/scripts/battle.js';
-//        next.container.appendChild(script);
-//        }, 
-//    }],
+    views: [{
+        namespace: 'page6',
+        beforeEnter({ next }) {
+
+        // load your script
+        let script = document.createElement('script');
+        script.src = '/scripts/battle.js';
+        next.container.appendChild(script);
+        }, 
+    }],
     
 });
