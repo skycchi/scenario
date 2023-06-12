@@ -271,6 +271,12 @@ header{
     padding:10px;
     box-sizing:border-box;
     background-color:black;
+    transition:0.5s;
+}
+
+.level:hover{
+    width:120px;
+    transition:0.5s;
 }
 
 .level1{
