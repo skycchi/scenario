@@ -380,8 +380,9 @@ $(document).ready(function() {
     click();
     shuffle();
     animate();
-    music(); 
     battle();
+    music(); 
+    
 
 });
 
@@ -389,8 +390,9 @@ barba.hooks.after(() => {
     click();
     shuffle();
     animate();
-    music();
     battle();
+    music();
+    
 });   
 
 function stats() {
