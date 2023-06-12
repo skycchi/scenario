@@ -377,22 +377,22 @@ function battle(){
 }
 
 $(document).ready(function() {
+    battle();
     click();
     shuffle();
     animate();
-    battle();
+    
     music(); 
     
 
 });
 
 barba.hooks.after(() => {
+    battle();
     click();
     shuffle();
     animate();
-    battle();
     music();
-    
 });   
 
 function stats() {
