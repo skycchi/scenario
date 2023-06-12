@@ -13,7 +13,7 @@
     </head>
     <body data-barba="wrapper">
         
-        <main data-barba="container" class="container">
+        <main data-barba="container" data-barba-namespace="page6" class="container">
             
             <audio autoplay loop id="music">
                 <source src="/music/Daitenshi%20no%20Ibuki.mp3">
@@ -30,10 +30,10 @@
             </div>
             
             <div class="attack">
-                <div id="yourHealth"><div id="yourHealthBar"></div><br>Gabriel</div>
-                <div id="yourHealth2"><div id="yourHealthBar2"></div><br>Len</div>
-                <div id="compHealth"><div id="compHealthBar"></div><br>Creation</div>
-                <button id="attack" onclick="ani()">Attack</button>
+                <div style="position:absolute;top:40px;left:40px;"><div id="playertitle2"></div><br>Health: <span id="playerhealth2">100</span>/100<br></div>
+                <div style="position:absolute;top:140px;left:40px;"><div id="playertitle"></div><br>Health: <span id="playerhealth">100</span>/100</div>
+                <div style="position:absolute;top:40px;right:40px;"><div id="enemytitle"></div><br>Health: <span id="enemyhealth">100</span>/100</div>
+                <div id="attacklist"></div>
             </div>
             
             <div class="dialoguewrap">
@@ -42,14 +42,16 @@
                 <div class="box">
                     <div class="inner">
                         <div class="header">1/1</div>
-                        <div id="announcements">Gabriel is too scared to move! </div>
+                        <div id="battlenotes">Gabriel is too scared to move!</div>
                     </div>
                 </div>
                 
                 <div class="arrowwrap">
-                    <span class="arrowright" style="visibility:hidden"><a href="/pages/page6.html" data-direction="next"><img src="/images/right.png"></a></span>
+                    <span class="arrowright" style="visibility:hidden"><a href="/pages/page7.html" data-direction="next"><img src="/images/right.png"></a></span>
                 </div>
             </div>
+            
+            <script type="text/javascript" src="/scripts/battle.js"></script>
 
         </main>
         
