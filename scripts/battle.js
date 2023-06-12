@@ -31,12 +31,12 @@ var makeattacks = function() {
     }
 }
 
-/*var makeattacks2 = function() {
+var makeattacks2 = function() {
 	var thearray = attacks[player2];
 	for(var i=0;i<thearray.length;i++){
 		makebutton2(thearray[i]);
     }
-}*/
+}
 
 //Health Values
 var playerhp = 100;
@@ -120,7 +120,7 @@ var buttonpress = function(t) {
 	
 	//Remove Buttons
 	attacklist.empty();
-    /*attacklist2.empty();*/
+    attacklist2.empty();
 	
 	//Check Health
 	if(enemyhp===0) {
@@ -131,10 +131,10 @@ var buttonpress = function(t) {
 		updatenotes(player+" died!");
 		return
 	}
-    /*if(playerhp2===0) {
+    if(playerhp2===0) {
 		updatenotes(player2+" died!");
 		return
-	}*/
+	}
 	
 	//Continue
 	if(t==="Continue") {
@@ -171,16 +171,34 @@ var buttonpress = function(t) {
 			enemydefend=1;
 		}
 		if(t==="Radiance") {
-			if(Math.random() > 0.25)
-				updatenotes("The "+enemy+" uses Radiance. "+updatephealth(-30 +Math.floor(Math.random()*30-15) ));
-			else
-				updatenotes("The "+enemy+" uses Radiance, and misses.");
+            if(Math.floor(Math.random() * 2) === 0){
+                if(Math.random() > 0.25)
+				    updatenotes("The "+enemy+" uses Radiance. "+updatephealth(-30 +Math.floor(Math.random()*30-15) ));
+                else
+				    updatenotes("The "+enemy+" uses Radiance, and misses.");
+            }
+            else{
+                if(Math.random() > 0.25)
+				    updatenotes("The "+enemy+" uses Radiance. "+updatephealth2(-30 +Math.floor(Math.random()*30-15) ));
+                else
+				    updatenotes("The "+enemy+" uses Radiance, and misses.");
+            }
 		}
 		if(t==="God Hand") {
-			if(Math.random() > 0.75)
-				updatenotes("The "+enemy+" uses God Hand. "+updatephealth(-50 +Math.floor(Math.random()*40-20) ));
+            if(Math.floor(Math.random() * 2) === 0){
+                if(Math.random() > 0.75)
+				    updatenotes("The "+enemy+" uses God Hand. "+updatephealth(-50 +Math.floor(Math.random()*40-20) ));
+			     else
+				    updatenotes("The "+enemy+" uses God Hand, and misses.");
+            }
+            else{
+                if(Math.random() > 0.75)
+				updatenotes("The "+enemy+" uses God Hand. "+updatephealth2(-50 +Math.floor(Math.random()*40-20) ));
 			else
 				updatenotes("The "+enemy+" uses God Hand, and misses.");
+            }
+            
+			
 		}
 		if(t==="Heal") {
 			var heal = 20;
@@ -219,7 +237,13 @@ var buttonpress = function(t) {
 				updatenotes(player2+" uses Shoot, and misses.");
 		}
         if(t==="Precision") {
+            if(playersp2>0){
 				updatenotes(player2+" uses Precision. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
+                playersp2 -= 20;
+                playerstamina2.text(playersp2);
+            }
+            else
+                updatenotes('SP is too low to use Precision!');
 		}
         if(t==="Acceleration") {
             if(playersp>0){
@@ -235,8 +259,8 @@ var buttonpress = function(t) {
 			playerdefend=2;
 		}
 		if(t==="Defend") {
-			updatenotes(player+" prepares to defend an attack.");
-			playerdefend=1;
+			updatenotes(player2+" prepares to defend an attack.");
+			playerdefend2=1;
 		}
 		if(t==="Fireball") {
 			if(Math.random() > 0.25)
@@ -268,13 +292,13 @@ var makebutton = function(t) {
 	attacklist.append(button);
 };
 
-/*var makebutton2 = function(t) {
+var makebutton2 = function(t) {
 	var button = $('<button/>',{
 		text: t,
 		click: function () { buttonpress(t); }
 	});
 	attacklist2.append(button);
-};*/
+};
 
 //Ready
 $( document ).ready(function() {
@@ -301,6 +325,6 @@ $( document ).ready(function() {
 	
 	//Begin battle
 	makeattacks();
-//    makeattacks2();
+    makeattacks2();
 	
 });
