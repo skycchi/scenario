@@ -1,4 +1,5 @@
- //Global Variables
+function init(){
+//Global Variables
     var player;
     var player2;
     var enemy;
@@ -328,3 +329,6 @@
         makeattacks2();
 
     });
+}
+
+init();
