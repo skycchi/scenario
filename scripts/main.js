@@ -1,3 +1,6 @@
+//0 = Len
+//1 = Gabriel
+
 function shuffle(){
     var hints = $('.box');
     var i = 0;
@@ -57,6 +60,11 @@ var enemyhealth;
 var battlenotes;
 var attacklist;
 var attacklist2;
+
+var lenlevel = 1;
+var lenpoints = 0;
+var gabriellevel = 1;
+var gabrielpoints = 0;
 
 //Attack List (JSON defining all attacks for all class types)
 var attacks = {
@@ -169,7 +177,11 @@ var buttonpress = function(t) {
 
     //Check Health
     if(enemyhp===0) {
-        updatenotes(player+" wins the battle! Len gains 1 level and 100 points.");
+        updatenotes(playe2+" and "+player+" wins the battle! Both gain 1 level and 100 points.");
+        lenlevel += 1;
+        lenpoints += 100;
+        gabriellevel += 1;
+        gabrielpoints += 100;
         return
     }
     if(playerhp===0) {
@@ -217,30 +229,38 @@ var buttonpress = function(t) {
         }
         if(t==="Radiance") {
             if(Math.floor(Math.random() * 2) === 0){
-                if(Math.random() > 0.25)
+                if(Math.random() > 0.75){
                     updatenotes("The "+enemy+" uses Radiance. "+updatephealth(-30 +Math.floor(Math.random()*30-15) ));
-                else
+                }
+                else{
                     updatenotes("The "+enemy+" uses Radiance, and misses.");
+                }
             }
             else{
-                if(Math.random() > 0.25)
+                if(Math.random() > 0.75){
                     updatenotes("The "+enemy+" uses Radiance. "+updatephealth2(-30 +Math.floor(Math.random()*30-15) ));
-                else
+                }
+                else{
                     updatenotes("The "+enemy+" uses Radiance, and misses.");
+                }
             }
         }
         if(t==="God Hand") {
             if(Math.floor(Math.random() * 2) === 0){
-                if(Math.random() > 0.75)
+                if(Math.random() > 0.25){
                     updatenotes("The "+enemy+" uses God Hand. "+updatephealth(-50 +Math.floor(Math.random()*40-20) ));
-                 else
+                }
+                 else{
                     updatenotes("The "+enemy+" uses God Hand, and misses.");
+                 }
             }
             else{
-                if(Math.random() > 0.75)
-                updatenotes("The "+enemy+" uses God Hand. "+updatephealth2(-50 +Math.floor(Math.random()*40-20) ));
-            else
-                updatenotes("The "+enemy+" uses God Hand, and misses.");
+                if(Math.random() > 0.25){
+                    updatenotes("The "+enemy+" uses God Hand. "+updatephealth2(-50 +Math.floor(Math.random()*40-20) ));
+                }
+                else{
+                    updatenotes("The "+enemy+" uses God Hand, and misses.");
+                }
             }
 
 
@@ -362,6 +382,8 @@ $(document).ready(function() {
     battlenotes = $("#battlenotes");
     attacklist = $("#attacklist");
     attacklist2 = $("#attacklist2");
+    healthbar = $("#healthbar");
+    healthbar2 = $("#healthbar2");
 
     //Update text
     $("#playertitle").text(player);
@@ -392,6 +414,8 @@ barba.hooks.after(() => {
     battlenotes = $("#battlenotes");
     attacklist = $("#attacklist");
     attacklist2 = $("#attacklist2");
+    healthbar = $("#healthbar");
+    healthbar2 = $("#healthbar2");
 
     //Update text
     $("#playertitle").text(player);
