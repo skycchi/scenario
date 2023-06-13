@@ -61,11 +61,6 @@ var battlenotes;
 var attacklist;
 var attacklist2;
 
-var lenlevel = 1;
-var lenpoints = 0;
-var gabriellevel = 1;
-var gabrielpoints = 0;
-
 //Attack List (JSON defining all attacks for all class types)
 var attacks = {
     //Player Classes
