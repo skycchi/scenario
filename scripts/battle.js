@@ -13,6 +13,11 @@ function init(){
     var battlenotes;
     var attacklist;
     var attacklist2;
+    
+    var lenlevel = 1;
+    var lenpoints = 0;
+    var gabriellevel = 1;
+    var gabrielpoints= = 0;
 
     //Attack List (JSON defining all attacks for all class types)
     var attacks = {
@@ -126,6 +131,8 @@ function init(){
         //Check Health
         if(enemyhp===0) {
             updatenotes(player+" wins the battle! Len gains 1 level and 100 points.");
+            lenlevel += 1;
+            lenpoints += 100;
             return
         }
         if(playerhp===0) {
