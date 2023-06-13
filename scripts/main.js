@@ -177,7 +177,7 @@ var buttonpress = function(t) {
 
     //Check Health
     if(enemyhp===0) {
-        updatenotes(playe2+" and "+player+" wins the battle! Both gain 1 level and 100 points.");
+        updatenotes(player2+" and "+player+" wins the battle! Both gain 1 level and 100 points.");
         lenlevel += 1;
         lenpoints += 100;
         gabriellevel += 1;
