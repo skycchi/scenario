@@ -197,8 +197,15 @@ a{
     z-index:-1;
 }
 
-.spriteleft img, .spriteright img{
+.spriteleft img{
     width:300px;
+    z-index:-1;
+    display:block;
+    margin:auto;
+}
+
+.spriteright img{
+    width:280px;
     z-index:-1;
     display:block;
     margin:auto;
