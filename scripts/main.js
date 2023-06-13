@@ -182,6 +182,7 @@ var buttonpress = function(t) {
         lenpoints += 100;
         gabriellevel += 1;
         gabrielpoints += 100;
+        $(".arrowright").css('visibility', 'visible');
         return
     }
     if(playerhp===0) {
