@@ -69,6 +69,7 @@ var attacks = {
 
     //Enemies
     'Creation':['God Hand','Radiance','Dodge'],
+    'Higher Creation':['God Hand','Radiance','Memento Mori'],
 };
 
 //Make Attack Buttons
@@ -267,11 +268,19 @@ var buttonpress = function(t) {
             updatenotes("The "+enemy+" uses Heal, and recovered "+heal+" HP!");
             updateehealth(heal);
         }
-        if(t==="Dark Arts") {
-            if(Math.random() > 0.85)
-                updatenotes("The "+enemy+" uses Dark Arts. "+updatephealth(-80 +Math.floor(Math.random()*300-150) ));
-            else
-                updatenotes("The "+enemy+" uses Dark Arts, and misses.");
+        if(t==="Memento Mori") {
+            if(Math.floor(Math.random() * 2) === 0){
+                if(Math.random() > 0.10)
+                    updatenotes("The "+enemy+" uses Memento Mori. "+updatephealth(-60 +Math.floor(Math.random()*30-15) ));
+                else
+                    updatenotes("The "+enemy+" uses Dark Arts, and misses.");
+            }
+            else{
+                if(Math.random() > 0.10)
+                    updatenotes("The "+enemy+" uses Memento Mori. "+updatephealth2(-60 +Math.floor(Math.random()*30-15) ));
+                else
+                    updatenotes("The "+enemy+" uses Dark Arts, and misses.");
+            }
         }
         if(playerhp>0)
             makeattacks();
@@ -387,7 +396,13 @@ $(document).ready(function() {
     //Get arguments
     player = "Len";
     player2 = "Gabriel";
-    enemy = "Creation";
+    
+    if(window.location.pathname == '/pages/page6.html') {
+        enemy = "Creation";
+    }
+    if(window.location.pathname == '/pages/battletest.html') {
+        enemy = "Higher Creation";
+    }
 
     //Get important elements
     playerhealth = $("#playerhealth");
@@ -419,7 +434,14 @@ barba.hooks.after(() => {
     //Get arguments
     player = "Len";
     player2 = "Gabriel";
-    enemy = "Creation";
+    
+    
+    if(window.location.pathname == '/pages/page6.html') {
+        enemy = "Creation";
+    }
+    if(window.location.pathname == '/pages/battletest.html') {
+        enemy = "Higher Creation";
+    }
 
     //Get important elements
     playerhealth = $("#playerhealth");
@@ -457,16 +479,6 @@ function stats() {
 
 barba.init({
    prevent: ({ el }) => el.classList && el.classList.contains('prevent'),
-//    views: [{
-//        namespace: 'page6',
-//        afterEnter({ next }) {
-//
-//        let script = document.createElement('script');
-//        script.src = '/scripts/battle.js';
-//        next.container.appendChild(script);
-//        }, 
-//    }],
-    
     transitions: [{
     name: 'opacity-transition',
     leave(data) {
