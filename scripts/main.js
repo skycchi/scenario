@@ -64,8 +64,8 @@ var attacklist2;
 //Attack List (JSON defining all attacks for all class types)
 var attacks = {
     //Player Classes
-    'Len': ['Slash','Stab','Acceleration'],
-    'Gabriel': ['Shoot','Defend','Precision'],
+    'Len': ['Slash', 'Acceleration', 'Heal Len'],
+    'Gabriel': ['Shoot', 'Precision', 'Heal Gabriel'],
 
     //Enemies
     'Creation':['God Hand','Radiance','Dodge'],
@@ -92,6 +92,7 @@ var playerhp2 = 100;
 var playersp = 100;
 var playersp2 = 100;
 var enemyhp = 100;
+var healsleft = 20;
 
 //Defend Flags
 var playerdefend = 0;
@@ -150,6 +151,10 @@ var updateehealth = function(v) {
     if(enemyhp>100) enemyhp = 100;
     enemyhealth.text(enemyhp);
     return t;
+}
+
+var updateheals = function(){
+    $("#heals").text(healsleft);
 }
 
 //Update Battle Notes
@@ -275,7 +280,7 @@ var buttonpress = function(t) {
         else
             makebutton("Continue");
     }
-
+    
     //Player moves
     else {
         if(t==="Slash") {
@@ -331,10 +336,29 @@ var buttonpress = function(t) {
             else
                 updatenotes(player+" uses Thunder, and misses.");
         }
-        if(t==="Heal") {
-            var heal = 20;
-            updatenotes(player+" uses Heal, and recovered "+heal+" HP!");
-            updatephealth(heal);
+        if(t==="Heal Gabriel"){
+            if(heals<=0){
+                updatenotes("Out of Heals!")
+            }
+            else{
+                var heal = 20;
+                updatenotes(player2+" uses Heal, and recovered "+heal+" HP!");
+                updatephealth2(heal);
+                healsleft -= 1;
+                updateheals(healsleft);
+            }
+        }
+        if(t==="Heal Len"){
+            if(heals<=0){
+                updatenotes("Out of Heals!")
+            }
+            else{
+                var heal = 20;
+                updatenotes(player+" uses Heal, and recovered "+heal+" HP!");
+                updatephealth(heal);
+                healsleft -= 1;
+                updateheals(healsleft);
+            }
         }
         makebutton("Continue");
     }
