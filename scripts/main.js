@@ -172,7 +172,7 @@ var buttonpress = function(t) {
 
     //Check Health
     if(enemyhp===0) {
-        updatenotes(player2+" and "+player+" win the battle! Both gain 1 level and 100 points. Your HP and SP are automatically restored!");
+        updatenotes(player2+" and "+player+" win the battle! Both gain 1 level and 100 points. HP and SP are automatically restored!");
         $(".arrowright").css('visibility', 'visible');
         return
     }
