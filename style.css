@@ -410,7 +410,7 @@ button {
     font-size:20px;
 }
 
-#attacklist {
+#attacklist, #option1 {
     display:flex;
     gap:10px;
     position:absolute;
@@ -419,7 +419,7 @@ button {
     margin-bottom: 15px;
 }
 
-#attacklist2 {
+#attacklist2, #option2 {
     display:flex;
     gap:10px;
     position:absolute;

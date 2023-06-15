@@ -415,6 +415,21 @@ var makebutton2 = function(t) {
     attacklist2.append(button);
 };
 
+
+var cookie = 0;
+
+function addOne(){
+    cookie++;
+    localStorage.setItem("cookie", cookie);
+    console.log(localStorage.getItem("cookie"));
+}
+
+function subOne(){
+    cookie--;
+    localStorage.setItem("cookie", cookie);
+    console.log(localStorage.getItem("cookie"));
+}
+
 $(document).ready(function() {
     click();
     
@@ -422,7 +437,7 @@ $(document).ready(function() {
     player = "Len";
     player2 = "Gabriel";
     
-    if(window.location.pathname == '/pages/page6.html') {
+    if(window.location.pathname == '/pages/page6.html' || window.location.pathname == '/pages/page9.html') {
         enemy = "Creation";
     }
     if(window.location.pathname == '/pages/battletest.html') {
@@ -461,7 +476,7 @@ barba.hooks.after(() => {
     player2 = "Gabriel";
     
     
-    if(window.location.pathname == '/pages/page6.html') {
+    if(window.location.pathname == '/pages/page6.html' || window.location.pathname == '/pages/page9.html') {
         enemy = "Creation";
     }
     if(window.location.pathname == '/pages/battletest.html') {
