@@ -76,6 +76,7 @@ var attacks = {
     //Enemies
     'Creation':['God Hand','Radiance','Dodge'],
     'Higher Creation':['God Hand','Radiance','Memento Mori'],
+    'Creator':['Creation','Devastation','Annihilation'],
 };
 
 //Make Attack Buttons
@@ -98,7 +99,12 @@ var playerhp = 100;
 var playerhp2 = 100;
 var playersp = 100;
 var playersp2 = 100;
-var enemyhp = 100;
+if(window.location.pathname == '/pages/thecreator.html') {
+    var enemyhp = 1000;
+}
+else{
+    var enemyhp = 100;
+}
 var healsleft = 20;
 
 //Defend Flags
@@ -155,7 +161,13 @@ var updateehealth = function(v) {
     }
     enemyhp += v;
     if(enemyhp<0) enemyhp = 0;
-    if(enemyhp>100) enemyhp = 100;
+    if(window.location.pathname == '/pages/thecreator.html') {
+        if(enemyhp>1000) enemyhp = 1000;
+    }
+    else{
+        if(enemyhp>100) enemyhp = 100;
+    }
+    
     enemyhealth.text(enemyhp);
     return t;
 }
@@ -208,8 +220,25 @@ var buttonpress = function(t) {
             t = pickenemymove();
 
         //Enemy moves
-        if(t==="Slash") {
-            updatenotes("The "+enemy+" uses Slash. "+updatephealth(-20 +Math.floor(Math.random()*20-10) ));
+        if(t==="Devastation") {
+            if(Math.floor(Math.random() * 2) === 0){
+                if(Math.random() > 0.75){
+                    updatenotes("The "+enemy+" uses Devastation. "+updatephealth(-50 +Math.floor(Math.random()*30-15) ));
+//                    damagetaken.play();
+                }
+                else{
+                    updatenotes("The "+enemy+" uses Devastation, and misses.");
+                }
+            }
+            else{
+                if(Math.random() > 0.75){
+                    updatenotes("The "+enemy+" uses Devastation. "+updatephealth2(-50 +Math.floor(Math.random()*30-15) ));
+//                    damagetaken.play();
+                }
+                else{
+                    updatenotes("The "+enemy+" uses Devastation, and misses.");
+                }
+            }
         }
         if(t==="Stab") {
             if(Math.random() > 0.5)
@@ -270,12 +299,16 @@ var buttonpress = function(t) {
                     updatenotes("The "+enemy+" uses God Hand, and misses.");
                 }
             }
-
-
         }
         if(t==="Heal") {
             var heal = 20;
             updatenotes("The "+enemy+" uses Heal, and recovered "+heal+" HP!");
+//            healentity.play();
+            updateehealth(heal);
+        }
+        if(t==="Creation") {
+            var heal = 50;
+            updatenotes("The "+enemy+" uses Creation, and recovered "+heal+" HP!");
 //            healentity.play();
             updateehealth(heal);
         }
@@ -296,6 +329,26 @@ var buttonpress = function(t) {
                 }
                 else{
                     updatenotes("The "+enemy+" uses Memento Mori, and misses.");
+                }
+            }
+        }
+        if(t==="Annihilation") {
+            if(Math.floor(Math.random() * 2) === 0){
+                if(Math.random() > 0.10){
+                    updatenotes("The "+enemy+" uses Annhilation. "+updatephealth(-80 +Math.floor(Math.random()*30-15) ));
+//                    damagetaken.play();
+                }
+                else{
+                    updatenotes("The "+enemy+" uses Annhilation, and misses.");
+                }
+            }
+            else{
+                if(Math.random() > 0.10){
+                    updatenotes("The "+enemy+" uses Annhilation. "+updatephealth2(-80 +Math.floor(Math.random()*30-15) ));
+//                    damagetaken.play();
+                }
+                else{
+                    updatenotes("The "+enemy+" uses Annhilation, and misses.");
                 }
             }
         }
@@ -330,7 +383,7 @@ var buttonpress = function(t) {
         }
         if(t==="Precision") {
             if(playersp2>0){
-                updatenotes(player2+" uses Precision. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
+                updatenotes(player2+" uses Precision. A critical hit!"+updateehealth(-40 +Math.floor(Math.random()*30-15) ));
 //                attackhit.play();
                 playersp2 -= 20;
                 playerstamina2.text(playersp2);
@@ -373,7 +426,12 @@ var buttonpress = function(t) {
                 updatenotes("Out of Heals!")
             }
             else{
-                var heal = 20;
+                if(window.location.pathname == '/pages/thecreator.html') {
+                    var heal = 50;
+                }
+                else{
+                    var heal = 20;
+                }
                 updatenotes(player2+" uses Heal, and recovered "+heal+" HP!");
 //                healentity.play();
                 updatephealth2(heal);
@@ -386,7 +444,12 @@ var buttonpress = function(t) {
                 updatenotes("Out of Heals!")
             }
             else{
-                var heal = 20;
+                if(window.location.pathname == '/pages/thecreator.html') {
+                    var heal = 50;
+                }
+                else{
+                    var heal = 20;
+                }
                 updatenotes(player+" uses Heal, and recovered "+heal+" HP!");
 //                healentity.play();
                 updatephealth(heal);
@@ -443,6 +506,9 @@ $(document).ready(function() {
     if(window.location.pathname == '/pages/battletest.html') {
         enemy = "Higher Creation";
     }
+    if(window.location.pathname == '/pages/thecreator.html') {
+        enemy = "Creator";
+    }
 
     //Get important elements
     playerhealth = $("#playerhealth");
@@ -481,6 +547,9 @@ barba.hooks.after(() => {
     }
     if(window.location.pathname == '/pages/battletest.html') {
         enemy = "Higher Creation";
+    }
+    if(window.location.pathname == '/pages/thecreator.html') {
+        enemy = "Creator";
     }
 
     //Get important elements

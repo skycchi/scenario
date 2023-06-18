@@ -232,13 +232,13 @@ header{
 .musicplayer{
     border-image-slice:1;
     border-image-width:2px;
-    padding:10px 10px 5px 10px;
+    padding:10px 10px;
     border-image-repeat:stretch stretch;
     border-image-source:url("/images/border.png");
     border-style:solid;
     box-sizing:border-box;
     background-color:black;
-    width:400px;
+    width:450px;
     z-index:9999999999;
     position:absolute;
     top:-4px;
