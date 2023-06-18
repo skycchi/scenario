@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PROFILES.</title>
+        <link rel="shortcut icon" href="https://files.catbox.moe/h33w19.png">
+        <link rel="stylesheet" href="/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    </head>
+    <style>
+        body{
+            margin:50px;
+        }
+        
+        #wrapper{
+            display:flex;
+            justify-content: space-between;
+        }
+        
+        .left{
+            flex: 1 1 auto;
+            display:flex;
+            flex-direction:row;
+            gap:10px;
+            flex-wrap:wrap;
+            width:50%;
+            justify-content: center;
+        }
+        
+        .left img{
+            border-image-slice:1;
+            border-image-width:2px;
+            border-image-repeat:stretch stretch;
+            border-image-source:url("/images/border.png");
+            border-style:solid;
+        }
+        
+        .right{
+            flex: 1 1 auto;
+            width:50%;
+        }
+        
+        .left + .right {
+            border-left: solid 2px white;
+        }
+
+    </style>
+    <body>
+        Profiles<br><br>
+        <div id="wrapper">
+            <div class="left">
+                <img src="/images/gabrielicon.png">
+                <img src="/images/lenicon.png">
+                <img src="/images/skyicon.png">
+            </div>
+            <div class="right">a</div>
+        </div>
+        
+        <script>
+            var click = new Audio("/music/sound effects/click.ogg");
+            document.onclick = function() {
+                click.play();
+            }
+            click.volume = 0.5;
+        </script>
+    </body>
+</html>
