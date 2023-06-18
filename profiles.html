@@ -34,6 +34,9 @@
             border-image-repeat:stretch stretch;
             border-image-source:url("/images/border.png");
             border-style:solid;
+            width:100px;
+            height:100px;
+            padding:10px 0px 0px 0px;
         }
         
         .right{
@@ -41,20 +44,57 @@
             width:50%;
         }
         
+        .right img{
+            height:500px;
+        }
+        
         .left + .right {
             border-left: solid 2px white;
         }
+        
+        .hideDivs{
+            display:none; 
+        }
 
+        .inner{
+            display:flex;
+            justify-content: space-around;
+        }
     </style>
     <body>
         Profiles<br><br>
         <div id="wrapper">
             <div class="left">
-                <img src="/images/gabrielicon.png">
-                <img src="/images/lenicon.png">
-                <img src="/images/skyicon.png">
+                <img src="/images/gabrielicon.png" data-id="div1">
+                <img src="/images/lenicon.png" data-id="div2">
+                <img src="/images/skyicon.png" data-id="div3">
             </div>
-            <div class="right">a</div>
+            <div class="right">
+                <div class="hideDivs" id="div1" style="display:block;">
+                    <div class="inner">
+                        <img src="/images/gabriel.png">
+                        <div class="details">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="hideDivs" id="div2">
+                    <div class="inner">
+                        <img src="/images/len.png">
+                        <div class="details">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="hideDivs" id="div3">
+                    <div class="inner">
+                        <img src="/images/sky.png">
+                        <div class="details">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <script>
@@ -63,6 +103,16 @@
                 click.play();
             }
             click.volume = 0.5;
+        </script>
+        
+        <script>
+            $(".left img").on('click',function(){
+
+               var hello = $(this).attr('data-id');
+               $('.hideDivs').hide();
+               $('#'+hello).show();
+            });
+
         </script>
     </body>
 </html>
