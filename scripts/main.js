@@ -383,7 +383,7 @@ var buttonpress = function(t) {
         }
         if(t==="Precision") {
             if(playersp2>0){
-                updatenotes(player2+" uses Precision. A critical hit!"+updateehealth(-40 +Math.floor(Math.random()*30-15) ));
+                updatenotes(player2+" uses Precision. A critical hit! "+updateehealth(-50 +Math.floor(Math.random()*30-15) ));
 //                attackhit.play();
                 playersp2 -= 20;
                 playerstamina2.text(playersp2);
