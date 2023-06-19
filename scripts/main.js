@@ -102,7 +102,7 @@ var playerhp2 = 100;
 var playersp = 100;
 var playersp2 = 100;
 if(window.location.pathname == '/pages/thecreator.html') {
-    var enemyhp = 1000;
+    var enemyhp = 500;
 }
 else{
     var enemyhp = 100;
@@ -164,7 +164,7 @@ var updateehealth = function(v) {
     enemyhp += v;
     if(enemyhp<0) enemyhp = 0;
     if(window.location.pathname == '/pages/thecreator.html') {
-        if(enemyhp>1000) enemyhp = 1000;
+        if(enemyhp>500) enemyhp = 500;
     }
     else{
         if(enemyhp>100) enemyhp = 100;
@@ -200,6 +200,7 @@ var buttonpress = function(t) {
     if(enemyhp===0) {
         updatenotes(player2+" and "+player+" win the battle! Both gain 1 level and 100 points. HP and SP are automatically restored!");
         $(".arrowright").css('visibility', 'visible');
+        $(".spritewrap").fadeOut();
         return
     }
     if(playerhp===0) {
@@ -576,7 +577,7 @@ barba.hooks.after(() => {
     shuffle();
     animate();
     music();
-});   
+}); 
 
 function stats() {
     var x = document.getElementById("stats");
@@ -587,6 +588,10 @@ function stats() {
     }
 }
 
+function addMoon(){
+    $('#moon').addClass('moon');
+}
+setInterval(addMoon, 35000);
 
 barba.init({
    prevent: ({ el }) => el.classList && el.classList.contains('prevent'),

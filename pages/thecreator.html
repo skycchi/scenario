@@ -25,7 +25,7 @@
                 </div>
             </header>
             
-            <div class="spritewrap">
+            <div class="spritewrap" id="moon">
                 <div class="spritemid"><img src="/images/sky.png"></div>
             </div>
             
@@ -36,7 +36,7 @@
                 
                 <div style="position:absolute;top:275px;left:40px;width:110px;"><div id="heals">20</div> Heals</div>
                 
-                <div style="position:absolute;top:35px;right:40px;"><div id="enemytitle"></div><br>HP: <span id="enemyhealth">1000</span>/1000</div>
+                <div style="position:absolute;top:35px;right:40px;"><div id="enemytitle"></div><br>HP: <span id="enemyhealth">500</span>/500</div>
                 
                 <div id="attacklist"></div>
                 <div id="attacklist2"></div>
@@ -56,14 +56,6 @@
                     <span class="arrowright" style="visibility:hidden"><a href="/pages/thecreator.html" data-direction="next"><img src="/images/right.png"></a></span>
                 </div>
             </div>
-            
-            <script>
-            var myVar = setInterval(myTimer, 35000);
-            function myTimer() {
-                document.getElementsByClassName("spritewrap")[0].style.backgroundImage = "url(/images/backgrounds/moon.jpg)";
-                document.getElementsByClassName("spritewrap")[0].style.backgroundSize = "cover";
-            }
-            </script>
             
         </main>
         
