@@ -57,6 +57,14 @@
                 </div>
             </div>
             
+            <script>
+            var myVar = setInterval(myTimer, 35000);
+            function myTimer() {
+                document.getElementsByClassName("spritewrap")[0].style.backgroundImage = "url(/images/backgrounds/moon.jpg)";
+                document.getElementsByClassName("spritewrap")[0].style.backgroundSize = "cover";
+            }
+            </script>
+            
         </main>
         
         <script src="/scripts/main.js"></script> 

@@ -53,9 +53,11 @@ var enemy;
 
 
 //Sound effects
-//var attackhit = new Audio("/music/sound effects/attackhit.mp3");
-//var damagetaken = new Audio("/music/sound effects/damagetaken.mp3");
-//var healentity = new Audio("/music/sound effects/heal.mp3");
+var attackhit = new Audio("/music/sound effects/attackhit.mp3");
+var damagetaken = new Audio("/music/sound effects/damagetaken.mp3");
+var healentity = new Audio("/music/sound effects/heal.mp3");
+var creationhit = new Audio("/music/sound effects/creation.mp3");
+var criticalhit = new Audio("/music/sound effects/critical.mp3");
 
 //Important Elements
 var playerhealth;
@@ -224,7 +226,7 @@ var buttonpress = function(t) {
             if(Math.floor(Math.random() * 2) === 0){
                 if(Math.random() > 0.75){
                     updatenotes("The "+enemy+" uses Devastation. "+updatephealth(-50 +Math.floor(Math.random()*30-15) ));
-//                    damagetaken.play();
+                    creationhit.play();
                 }
                 else{
                     updatenotes("The "+enemy+" uses Devastation, and misses.");
@@ -233,7 +235,7 @@ var buttonpress = function(t) {
             else{
                 if(Math.random() > 0.75){
                     updatenotes("The "+enemy+" uses Devastation. "+updatephealth2(-50 +Math.floor(Math.random()*30-15) ));
-//                    damagetaken.play();
+                    creationhit.play();
                 }
                 else{
                     updatenotes("The "+enemy+" uses Devastation, and misses.");
@@ -264,7 +266,7 @@ var buttonpress = function(t) {
             if(Math.floor(Math.random() * 2) === 0){
                 if(Math.random() > 0.75){
                     updatenotes("The "+enemy+" uses Radiance. "+updatephealth(-30 +Math.floor(Math.random()*30-15) ));
-//                    damagetaken.play();
+                    damagetaken.play();
                 }
                 else{
                     updatenotes("The "+enemy+" uses Radiance, and misses.");
@@ -273,7 +275,7 @@ var buttonpress = function(t) {
             else{
                 if(Math.random() > 0.75){
                     updatenotes("The "+enemy+" uses Radiance. "+updatephealth2(-30 +Math.floor(Math.random()*30-15) ));
-//                    damagetaken.play();
+                    damagetaken.play();
                 }
                 else{
                     updatenotes("The "+enemy+" uses Radiance, and misses.");
@@ -284,7 +286,7 @@ var buttonpress = function(t) {
             if(Math.floor(Math.random() * 2) === 0){
                 if(Math.random() > 0.25){
                     updatenotes("The "+enemy+" uses God Hand. "+updatephealth(-50 +Math.floor(Math.random()*40-20) ));
-//                    damagetaken.play();
+                    damagetaken.play();
                 }
                  else{
                     updatenotes("The "+enemy+" uses God Hand, and misses.");
@@ -293,7 +295,7 @@ var buttonpress = function(t) {
             else{
                 if(Math.random() > 0.25){
                     updatenotes("The "+enemy+" uses God Hand. "+updatephealth2(-50 +Math.floor(Math.random()*40-20) ));
-//                    damagetaken.play();
+                    damagetaken.play();
                 }
                 else{
                     updatenotes("The "+enemy+" uses God Hand, and misses.");
@@ -303,20 +305,20 @@ var buttonpress = function(t) {
         if(t==="Heal") {
             var heal = 20;
             updatenotes("The "+enemy+" uses Heal, and recovered "+heal+" HP!");
-//            healentity.play();
+            healentity.play();
             updateehealth(heal);
         }
         if(t==="Creation") {
             var heal = 50;
             updatenotes("The "+enemy+" uses Creation, and recovered "+heal+" HP!");
-//            healentity.play();
+            healentity.play();
             updateehealth(heal);
         }
         if(t==="Memento Mori") {
             if(Math.floor(Math.random() * 2) === 0){
                 if(Math.random() > 0.10){
                     updatenotes("The "+enemy+" uses Memento Mori. "+updatephealth(-60 +Math.floor(Math.random()*30-15) ));
-//                    damagetaken.play();
+                    damagetaken.play();
                 }
                 else{
                     updatenotes("The "+enemy+" uses Memento Mori, and misses.");
@@ -325,7 +327,7 @@ var buttonpress = function(t) {
             else{
                 if(Math.random() > 0.10){
                     updatenotes("The "+enemy+" uses Memento Mori. "+updatephealth2(-60 +Math.floor(Math.random()*30-15) ));
-//                    damagetaken.play();
+                    damagetaken.play();
                 }
                 else{
                     updatenotes("The "+enemy+" uses Memento Mori, and misses.");
@@ -336,7 +338,7 @@ var buttonpress = function(t) {
             if(Math.floor(Math.random() * 2) === 0){
                 if(Math.random() > 0.10){
                     updatenotes("The "+enemy+" uses Annhilation. "+updatephealth(-80 +Math.floor(Math.random()*30-15) ));
-//                    damagetaken.play();
+                    creationhit.play();
                 }
                 else{
                     updatenotes("The "+enemy+" uses Annhilation, and misses.");
@@ -345,7 +347,7 @@ var buttonpress = function(t) {
             else{
                 if(Math.random() > 0.10){
                     updatenotes("The "+enemy+" uses Annhilation. "+updatephealth2(-80 +Math.floor(Math.random()*30-15) ));
-//                    damagetaken.play();
+                    creationhit.play();
                 }
                 else{
                     updatenotes("The "+enemy+" uses Annhilation, and misses.");
@@ -364,7 +366,7 @@ var buttonpress = function(t) {
     else {
         if(t==="Slash") {
             updatenotes(player+" uses Slash. "+updateehealth(-20 +Math.floor(Math.random()*20-10) ));
-//            attackhit.play();
+            attackhit.play();
         }
         if(t==="Stab") {
             if(Math.random() > 0.5)
@@ -375,7 +377,7 @@ var buttonpress = function(t) {
         if(t==="Shoot") {
             if(Math.random() > 0.25){
                 updatenotes(player2+" uses Shoot. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
-//                attackhit.play();
+                attackhit.play();
             }
             else{
                 updatenotes(player2+" uses Shoot, and misses.");
@@ -384,7 +386,7 @@ var buttonpress = function(t) {
         if(t==="Precision") {
             if(playersp2>0){
                 updatenotes(player2+" uses Precision. A critical hit! "+updateehealth(-50 +Math.floor(Math.random()*30-15) ));
-//                attackhit.play();
+                criticalhit.play();
                 playersp2 -= 20;
                 playerstamina2.text(playersp2);
             }
@@ -394,7 +396,7 @@ var buttonpress = function(t) {
         if(t==="Acceleration") {
             if(playersp>0){
                 updatenotes(player+" uses Acceleration. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
-//                attackhit.play();
+                attackhit.play();
                 playersp -= 20;
                 playerstamina.text(playersp);
             }
@@ -433,7 +435,7 @@ var buttonpress = function(t) {
                     var heal = 20;
                 }
                 updatenotes(player2+" uses Heal, and recovered "+heal+" HP!");
-//                healentity.play();
+                healentity.play();
                 updatephealth2(heal);
                 healsleft -= 1;
                 updateheals(healsleft);
@@ -451,7 +453,7 @@ var buttonpress = function(t) {
                     var heal = 20;
                 }
                 updatenotes(player+" uses Heal, and recovered "+heal+" HP!");
-//                healentity.play();
+                healentity.play();
                 updatephealth(heal);
                 healsleft -= 1;
                 updateheals(healsleft);
