@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>10</title>
+        <link rel="shortcut icon" href="https://files.catbox.moe/h33w19.png">
+        <link rel="stylesheet" href="/style.css">
+        <script src="https://kit.fontawesome.com/37b69e3f02.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/@barba/core"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    </head>
+    <body data-barba="wrapper">
+        
+        <main data-barba="container" data-barba-namespace="page8" class="container">
+            
+            <header>
+                <div class="date">
+                    May 5
+                </div>
+                <div class="level" onclick="stats()">
+                    LV 3
+                </div>
+            </header>
+            
+            <div id="stats" style="display:none;">
+                <div class="screen">
+                    <div class="screentitle">Gabriel Espinosa</div>
+                    <div class="screeninfo">
+                        <table>
+                            <tr><td><img src="/images/gabrielicon.png"></td>
+                                <td>
+                                    HP: <span id="playerhealth2">100</span>/100<br>SP: <span id="playerstamina2">100</span>/100
+                                    <br><br>Level: 3<br>
+                                    Weapon: Sniper Rifle<br>
+                                    Ability: Precision<br>
+                                    Precision allows the player to get a critical hit every time.
+                                    <br><br>
+                                    Points: 200
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dialoguewrap">
+                <span class="arrowleft"><a href="/pages/page9.html" data-direction="prev"><img src="/images/right.png"></a></span>
+                
+                <div class="box">
+                    <div class="spritewrap" style="margin:0px 130px -10px 0px;">
+                        <div class="spriteright"><img src="/images/mira%201.png"></div>
+                    </div>
+                    <div class="inner">
+                        <div class="header">1/9 Female Student in Distress</div>
+                        "You saved me! How were you guys able to learn to do that so quickly???"
+                        <div class="footer"><i class="fa-solid fa-caret-down"></i></div>
+                    </div>
+                </div>
+
+                <div class="box hidden">
+                    <div class="spritewrap" style="margin:0px 130px -10px 0px;">
+                        <div class="spriteright"><img src="/images/mira%201.png"></div>
+                    </div>
+                    <div class="inner">
+                        <div class="header">2/9 </div>
+                        The girl, who is sat on the floor, looks distressed but in awe as she gestures towards the sniper rifle in Gabriel's hands.
+                        <div class="footer"><i class="fa-solid fa-caret-down"></i></div>
+                    </div>
+                </div>
+
+                <div class="box hidden">
+                    <div class="spritewrap" style="margin:0px 130px -10px 0px;">
+                        <div class="spriteleft"><img src="/images/gabriel.png"></div>
+                        <div class="spriteright"><img src="/images/len.png"></div>
+                    </div>
+                    <div class="inner">
+                        <div class="header">3/9 Gabriel</div>
+                        "Nevermind that, are you ok? You were being chased by that... thing. Did it hurt you?"
+                        <div class="footer"><i class="fa-solid fa-caret-down"></i></div>
+                    </div>
+                </div>
+                
+                <div class="box hidden">
+                    <div class="spritewrap" style="margin:0px 130px -10px 0px;">
+                        <div class="spriteleft"><img src="/images/gabriel.png"></div>
+                        <div class="spriteright"><img src="/images/len.png"></div>
+                    </div>
+                    <div class="inner">
+                        <div class="header">4/9 </div>
+                        Gabriel's rifle fades away as he moves closer to the girl, concern evident in his voice. He offers a hand to the girl. The girl accepts the hand and gets up, wiping away her tears. 
+                        <div class="footer"><i class="fa-solid fa-caret-down"></i></div>
+                    </div>
+                </div>
+                
+                <div class="box hidden">
+                    <div class="spritewrap" style="margin:0px 130px -10px 0px;">
+                        <div class="spriteright"><img src="/images/mira%201.png"></div>
+                    </div>
+                    <div class="inner">
+                        <div class="header">5/9 Female Student in Distress</div>
+                        "I'm fine, I think. It did grab my arm and give me a bruise though. I lost a bit of HP when it did that... I should have used my weapon and ability but the sudden appearance of those Creation things caught me off guard..."
+                        <div class="footer"><i class="fa-solid fa-caret-down"></i></div>
+                    </div>
+                </div>
+                
+                <div class="box hidden">
+                    <div class="spritewrap" style="margin:0px 130px -10px 0px;">
+                        <div class="spriteright"><img src="/images/mira%201.png"></div>
+                    </div>
+                    <div class="inner">
+                        <div class="header">6/9 </div>
+                        The girl opens up her stats and summons her weapon. A sword appears in one hand, and a shield in the other.
+                        <div class="footer"><i class="fa-solid fa-caret-down"></i></div>
+                    </div>
+                </div>
+                
+                <div class="box hidden">
+                    <div class="spritewrap" style="margin:0px 130px -10px 0px;">
+                        <div class="spriteright"><img src="/images/mira%201.png"></div>
+                    </div>
+                    <div class="inner">
+                        <div class="header">7/9 Female Student in Distress</div>
+                        "Whoa, these are lighter than they look. My name is Mira. Can I join you guys? I promise I won't weight you down... I can even protect you with my shield. Just please don't leave me alone."
+                        <div class="footer"><i class="fa-solid fa-caret-down"></i></div>
+                    </div>
+                </div>
+                
+                <div class="box hidden">
+                    <div class="spritewrap" style="margin:0px 130px -10px 0px;">
+                        <div class="spriteleft"><img src="/images/gabriel.png"></div>
+                        <div class="spriteright"><img src="/images/len.png"></div>
+                    </div>
+                    <div class="inner">
+                        <div class="header">8/9 Gabriel</div>
+                        "Yeah, of course. There's no way we'd leave you alone, right Len? Come on, we should go back into hiding before another Creation shows up."
+                        <div class="footer"><i class="fa-solid fa-caret-down"></i></div>
+                    </div>
+                </div>
+                
+                <div class="box hidden">
+                    <div class="spritewrap" style="margin:0px 130px -10px 0px;">
+                        <div class="spriteleft"><img src="/images/gabriel.png"></div>
+                        <div class="spriteright"><img src="/images/len.png"></div>
+                    </div>
+                    <div class="inner">
+                        <div class="header">9/9 </div>
+                        Gabriel looks over at Len. He's been silent this whole time and was giving Mira a strange look. He still hasn't unsummoned his knives. Gabriel decides there isn't enough time to read too much into it as they start heading back into the classroom.
+                        <div class="footer"><i class="fa-solid fa-caret-down"></i></div>
+                    </div>
+                </div>
+                
+                <div class="arrowwrap">
+                    <span class="arrowright"><a href="/pages/page11.html" data-direction="next"><img src="/images/right.png"></a></span>
+                </div>
+            </div>
+            
+        </main>
+        
+        <script src="/scripts/main.js"></script>  
+        <script>barba.Pjax.start();</script>
+        
+    </body>
+</html>
