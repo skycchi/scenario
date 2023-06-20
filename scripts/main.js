@@ -44,6 +44,7 @@ function click(){
 function music(){
     var music = document.getElementById("music");
     music.play();
+    music.volume = 0.5;
 }
 
 //Global Variables
