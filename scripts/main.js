@@ -58,6 +58,7 @@ var damagetaken = new Audio("/music/sound effects/damagetaken.mp3");
 var healentity = new Audio("/music/sound effects/heal.mp3");
 var creationhit = new Audio("/music/sound effects/creation.mp3");
 var criticalhit = new Audio("/music/sound effects/critical.mp3");
+var protection = new Audio("/music/sound effects/protection.mp3");
 
 //Important Elements
 var playerhealth;
@@ -201,7 +202,12 @@ var buttonpress = function(t) {
 
     //Check Health
     if(enemyhp===0) {
-        updatenotes(player2+" and "+player+" win the battle! Both gain 1 level and 100 points. HP and SP are automatically restored!");
+        if(window.location.pathname == '/pages/theprotector.html') {
+            updatenotes(player+" wins the battle! "+player+ " gains 1 level and 100 points. HP and SP are automatically restored!");
+        }
+        else{
+            updatenotes(player2+" and "+player+" win the battle! Both gain 1 level and 100 points. HP and SP are automatically restored!");
+        }
         $(".arrowright").css('visibility', 'visible');
         $(".spritewrap").fadeOut();
         return
@@ -247,12 +253,7 @@ var buttonpress = function(t) {
             }
         }
         if(t==="Slash") {
-            if(Math.floor(Math.random() * 2) === 0){
-                updatenotes("The "+ enemy + " uses Slash. "+updatephealth(-20 +Math.floor(Math.random()*20-10) ));
-            }
-            else{
-                updatenotes("The "+ enemy + " uses Slash. "+updatephealth2(-20 +Math.floor(Math.random()*20-10) ));
-            }
+            updatenotes("The "+ enemy + " uses Slash. "+updatephealth(-20 +Math.floor(Math.random()*20-10) ));
             attackhit.play();
         }
         if(t==="Stab") {
@@ -279,6 +280,7 @@ var buttonpress = function(t) {
                 updatenotes("The "+enemy+" prepares to Protect!");
                 enemydefend=1;
                 enemysp -= 10;
+                protection.play();
             }
         }
         if(t==="Radiance") {
