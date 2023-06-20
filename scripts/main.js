@@ -78,6 +78,7 @@ var attacks = {
     //Enemies
     'Creation':['God Hand','Radiance','Dodge'],
     'Higher Creation':['God Hand','Radiance','Memento Mori'],
+    'Protector':['Slash', 'Protection', 'Heal'],
     'Creator':['Creation','Devastation','Annihilation'],
 };
 
@@ -107,6 +108,8 @@ if(window.location.pathname == '/pages/thecreator.html') {
 else{
     var enemyhp = 100;
 }
+var enemysp = 100;
+var enemyheal = 20;
 var healsleft = 20;
 
 //Defend Flags
@@ -153,7 +156,7 @@ var updatephealth2 = function(v) {
 //Update enemy health
 var updateehealth = function(v) {
     if(v<0) {
-        if(enemydefend==1) {v = Math.floor(v/4)}
+        if(enemydefend==1) {v = 0}
         if(enemydefend==2) {if(Math.random() > 0.5) v = 0;}
         var t = "Dealt " + Math.abs(v) + " damage.";
         if(enemydefend===1) t+=" The "+enemy+" defends the attack!";
@@ -243,6 +246,15 @@ var buttonpress = function(t) {
                 }
             }
         }
+        if(t==="Slash") {
+            if(Math.floor(Math.random() * 2) === 0){
+                updatenotes("The "+ enemy + " uses Slash. "+updatephealth(-20 +Math.floor(Math.random()*20-10) ));
+            }
+            else{
+                updatenotes("The "+ enemy + " uses Slash. "+updatephealth2(-20 +Math.floor(Math.random()*20-10) ));
+            }
+            attackhit.play();
+        }
         if(t==="Stab") {
             if(Math.random() > 0.5)
                 updatenotes("The "+enemy+" uses Stab. "+updatephealth(-40 +Math.floor(Math.random()*30-15) ));
@@ -259,9 +271,15 @@ var buttonpress = function(t) {
             updatenotes("The "+enemy+" prepares to dodge an attack.");
             enemydefend=2;
         }
-        if(t==="Defend") {
-            updatenotes("The "+enemy+" prepares to defend an attack.");
-            enemydefend=1;
+        if(t==="Protection") {
+            if(enemysp === 0){
+                updatenotes("The "+enemy+" prepares to Protect, but fails!");
+            }
+            else{
+                updatenotes("The "+enemy+" prepares to Protect!");
+                enemydefend=1;
+                enemysp -= 10;
+            }
         }
         if(t==="Radiance") {
             if(Math.floor(Math.random() * 2) === 0){
@@ -304,14 +322,20 @@ var buttonpress = function(t) {
             }
         }
         if(t==="Heal") {
-            var heal = 20;
-            updatenotes("The "+enemy+" uses Heal, and recovered "+heal+" HP!");
-            healentity.play();
-            updateehealth(heal);
+            if(enemyheal === 0){
+                updatenotes("The "+enemy+" uses Heal, but fails!");
+            }
+            else{
+                var heal = 20;
+                updatenotes("The "+enemy+" uses Heal, and recovers "+heal+" HP!");
+                enemyheal -= 1;
+                healentity.play();
+                updateehealth(heal);
+            }
         }
         if(t==="Creation") {
             var heal = 50;
-            updatenotes("The "+enemy+" uses Creation, and recovered "+heal+" HP!");
+            updatenotes("The "+enemy+" uses Creation, and recovers "+heal+" HP!");
             healentity.play();
             updateehealth(heal);
         }
@@ -388,7 +412,7 @@ var buttonpress = function(t) {
             if(playersp2>0){
                 updatenotes(player2+" uses Precision. A critical hit! "+updateehealth(-50 +Math.floor(Math.random()*30-15) ));
                 criticalhit.play();
-                playersp2 -= 20;
+                playersp2 -= 10;
                 playerstamina2.text(playersp2);
             }
             else
@@ -398,7 +422,7 @@ var buttonpress = function(t) {
             if(playersp>0){
                 updatenotes(player+" uses Acceleration. "+updateehealth(-30 +Math.floor(Math.random()*30-15) ));
                 attackhit.play();
-                playersp -= 20;
+                playersp -= 10;
                 playerstamina.text(playersp);
             }
             else
@@ -509,6 +533,9 @@ $(document).ready(function() {
     if(window.location.pathname == '/pages/battletest.html') {
         enemy = "Higher Creation";
     }
+    if(window.location.pathname == '/pages/theprotector.html') {
+        enemy = "Protector";
+    }
     if(window.location.pathname == '/pages/thecreator.html') {
         enemy = "Creator";
     }
@@ -550,6 +577,9 @@ barba.hooks.after(() => {
     }
     if(window.location.pathname == '/pages/battletest.html') {
         enemy = "Higher Creation";
+    }
+    if(window.location.pathname == '/pages/theprotector.html') {
+        enemy = "Protector";
     }
     if(window.location.pathname == '/pages/thecreator.html') {
         enemy = "Creator";

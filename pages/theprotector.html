@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>???</title>
+        <link rel="shortcut icon" href="https://files.catbox.moe/h33w19.png">
+        <link rel="stylesheet" href="/style.css">
+        <script src="https://kit.fontawesome.com/37b69e3f02.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/@barba/core"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    </head>
+    <body data-barba="wrapper">
+        
+        <main data-barba="container" data-barba-namespace="page6" class="container">
+            
+            <audio autoplay loop id="music">
+                <source src="/music/Deep%20Sea.mp3">
+            </audio>
+            
+            <header>
+                <div class="musicplayer">
+                    Now Playing - Deep Sea
+                </div>
+            </header>
+            
+            <div class="spritewrap">
+                <div class="spriteright"><img src="/images/mira%202.png"></div>
+            </div>
+            
+            <div class="attack">
+                <div style="position:absolute;top:35px;left:40px;"><div id="playertitle2"></div><br>HP: <span id="playerhealth2">100</span>/100<br>SP: <span id="playerstamina2">100</span>/100</div>
+                
+                <div style="position:absolute;top:155px;left:40px;"><div id="playertitle"></div><br>HP: <span id="playerhealth">100</span>/100<br>SP: <span id="playerstamina">100</span>/100</div>
+                
+                <div style="position:absolute;top:275px;left:40px;width:110px;"><div id="heals">20</div> Heals</div>
+                
+                <div style="position:absolute;top:35px;right:40px;"><div id="enemytitle"></div><br>HP: <span id="enemyhealth">100</span>/100</div>
+                
+                <div id="attacklist"></div>
+                <div id="attacklist2"></div>
+            </div>
+            
+            <div class="dialoguewrap">
+                <span class="arrowleft"><a href="/pages/theprotector.html" data-direction="prev"><img src="/images/right.png"></a></span>
+                
+                <div class="box">
+                    <div class="inner">
+                        <div class="header">1/1</div>
+                        <div id="battlenotes">Len springs into action!</div>
+                    </div>
+                </div>
+                
+                <div class="arrowwrap">
+                    <span class="arrowright" style="visibility:hidden"><a href="/pages/theprotector.html" data-direction="next"><img src="/images/right.png"></a></span>
+                </div>
+            </div>
+            
+        </main>
+        
+        <script src="/scripts/main.js"></script> 
+        <script>barba.Pjax.start();</script>
+        
+    </body>
+</html>
