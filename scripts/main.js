@@ -211,6 +211,7 @@ var buttonpress = function(t) {
         }
         $(".arrowright").css('visibility', 'visible');
         $(".spritewrap").fadeOut();
+        enemyhp = 100;
         return
     }
     if(playerhp===0) {
