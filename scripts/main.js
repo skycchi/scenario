@@ -204,7 +204,7 @@ var buttonpress = function(t) {
     //Check Health
     if(enemyhp===0) {
         if(window.location.pathname == '/pages/theprotector.html') {
-            updatenotes(player+" wins the battle! "+player+ " gains 1 level and 100 points. HP and SP are automatically restored!");
+            updatenotes(player+" wins the battle! "+player+ " gains 1 level and 100 points. HP and SP are automatically restored! " + player+ " gains extra points from defeating a human!");
         }
         else{
             updatenotes(player2+" and "+player+" win the battle! Both gain 1 level and 100 points. HP and SP are automatically restored!");
