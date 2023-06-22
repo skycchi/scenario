@@ -1,5 +1,6 @@
 //0 = Len
 //1 = Gabriel
+//2 = Mira
 
 function shuffle(){
     var hints = $('.box');
@@ -50,6 +51,7 @@ function music(){
 //Global Variables
 var player;
 var player2;
+var player3;
 var enemy;
 
 
@@ -64,18 +66,22 @@ var protection = new Audio("/music/sound effects/protection.mp3");
 //Important Elements
 var playerhealth;
 var playerhealth2;
+var playerhealth3;
 var playerstamina;
 var playerstamina2;
+var playerstamina3;
 var enemyhealth;
 var battlenotes;
 var attacklist;
 var attacklist2;
+var attacklist3;
 
 //Attack List (JSON defining all attacks for all class types)
 var attacks = {
     //Player Classes
-    'Len': ['Slash', 'Acceleration', 'Heal Len'],
+    'Len': ['Stab', 'Acceleration', 'Heal Len'],
     'Gabriel': ['Shoot', 'Precision', 'Heal Gabriel'],
+    'Mira': ['Slash', 'Protection', 'Heal Mira'],
 
     //Enemies
     'Creation':['God Hand','Radiance','Dodge'],
@@ -99,11 +105,20 @@ var makeattacks2 = function() {
     }
 }
 
+var makeattacks3 = function() {
+    var thearray = attacks[player3];
+    for(var i=0;i<thearray.length;i++){
+        makebutton3(thearray[i]);
+    }
+}
+
 //Health Values
 var playerhp = 100;
 var playerhp2 = 100;
+var playerhp3 = 100;
 var playersp = 100;
 var playersp2 = 100;
+var playersp3 = 100;
 if(window.location.pathname == '/pages/thecreator.html') {
     var enemyhp = 500;
 }
@@ -111,21 +126,33 @@ else{
     var enemyhp = 100;
 }
 var enemysp = 100;
-var enemyheal = 20;
-var healsleft = 20;
+var enemyheal = 10;
+if(window.location.pathname == '/pages/page6.html' || window.location.pathname == '/pages/page9.html') {
+    var healsleft = 20;
+}
+
+else if(window.location.pathname == '/pages/theprotector.html') {
+    var healsleft = 10;
+}
+
+else{
+    var healsleft = 30;
+}
+
 
 //Defend Flags
 var playerdefend = 0;
 var playerdefend2 = 0;
+var playerdefend3 = 0;
 var enemydefend = 0;
 
 //Update player health
 var updatephealth = function(v) {
     if(v<0) {
-        if(playerdefend==1) {v = Math.floor(v/4)}
+        if(playerdefend==1) {v = 0}
         if(playerdefend==2) {if(Math.random() > 0.5) v = 0;}
         var t = "Dealt " + Math.abs(v) + " damage.";
-        if(playerdefend===1) t+=" "+player+" defends the attack!";
+        if(playerdefend===1) t+=" "+player3+" defends the attack!";
         if(playerdefend===2&&v!==0) t+=" "+player+" attempts to dodge, but fails!";
         if(playerdefend===2&&v===0) t+=" "+player+" successfully dodges the attack!";
         playerdefend = 0;
@@ -140,10 +167,10 @@ var updatephealth = function(v) {
 //Update player health 2
 var updatephealth2 = function(v) {
     if(v<0) {
-        if(playerdefend2==1) {v = Math.floor(v/4)}
+        if(playerdefend2==1) {v = 0}
         if(playerdefend2==2) {if(Math.random() > 0.5) v = 0;}
         var t = "Dealt " + Math.abs(v) + " damage.";
-        if(playerdefend2===1) t+=" "+player2+" defends the attack!";
+        if(playerdefend2===1) t+=" "+player3+" defends the attack!";
         if(playerdefend2===2&&v!==0) t+=" "+player2+" attempts to dodge, but fails!";
         if(playerdefend2===2&&v===0) t+=" "+player2+" successfully dodges the attack!";
         playerdefend2 = 0;
@@ -152,6 +179,24 @@ var updatephealth2 = function(v) {
     if(playerhp2<0) playerhp2 = 0;
     if(playerhp2>100) playerhp2 = 100;
     playerhealth2.text(playerhp2);
+    return t;
+}
+
+//Update player health 3
+var updatephealth3 = function(v) {
+    if(v<0) {
+        if(playerdefend3==1) {v = 0}
+        if(playerdefend3==2) {if(Math.random() > 0.5) v = 0;}
+        var t = "Dealt " + Math.abs(v) + " damage.";
+        if(playerdefend3===1) t+=" "+player3+" defends the attack!";
+        if(playerdefend3===2&&v!==0) t+=" "+player3+" attempts to dodge, but fails!";
+        if(playerdefend3===2&&v===0) t+=" "+player3+" successfully dodges the attack!";
+        playerdefend3 = 0;
+    }
+    playerhp3 += v;
+    if(playerhp3<0) playerhp3 = 0;
+    if(playerhp3>100) playerhp3 = 100;
+    playerhealth3.text(playerhp3);
     return t;
 }
 
@@ -200,14 +245,18 @@ var buttonpress = function(t) {
     //Remove Buttons
     attacklist.empty();
     attacklist2.empty();
+    attacklist3.empty();
 
     //Check Health
     if(enemyhp===0) {
         if(window.location.pathname == '/pages/theprotector.html') {
             updatenotes(player+" wins the battle! "+player+ " gains 1 level and 100 points. HP and SP are automatically restored! " + player+ " gains extra points from defeating a human!");
         }
-        else{
+        else if(window.location.pathname == '/pages/page6.html' || window.location.pathname == '/pages/page9.html'){
             updatenotes(player2+" and "+player+" win the battle! Both gain 1 level and 100 points. HP and SP are automatically restored!");
+        }
+        else{
+            updatenotes(player2+", "+player+", and "+ player3 +" win the battle! Each gain 1 level and 100 points. HP and SP are automatically restored!");
         }
         $(".arrowright").css('visibility', 'visible');
         $(".spritewrap").fadeOut();
@@ -215,11 +264,15 @@ var buttonpress = function(t) {
         return
     }
     if(playerhp===0) {
-        updatenotes(player+" died!");
+        updatenotes(player+" died! Game over.");
         return
     }
     if(playerhp2===0) {
-        updatenotes(player2+" died!");
+        updatenotes(player2+" died! Game over.");
+        return
+    }
+    if(playerhp3===0) {
+        updatenotes(player3+" died! Game over.");
         return
     }
 
@@ -235,7 +288,7 @@ var buttonpress = function(t) {
 
         //Enemy moves
         if(t==="Devastation") {
-            if(Math.floor(Math.random() * 2) === 0){
+            if(Math.floor(Math.random() * 3) === 0){
                 if(Math.random() > 0.75){
                     updatenotes("The "+enemy+" uses Devastation. "+updatephealth(-50 +Math.floor(Math.random()*30-15) ));
                     creationhit.play();
@@ -244,7 +297,7 @@ var buttonpress = function(t) {
                     updatenotes("The "+enemy+" uses Devastation, and misses.");
                 }
             }
-            else{
+            else if(Math.floor(Math.random() * 3) === 1){
                 if(Math.random() > 0.75){
                     updatenotes("The "+enemy+" uses Devastation. "+updatephealth2(-50 +Math.floor(Math.random()*30-15) ));
                     creationhit.play();
@@ -253,13 +306,23 @@ var buttonpress = function(t) {
                     updatenotes("The "+enemy+" uses Devastation, and misses.");
                 }
             }
+            else{
+                if(Math.random() > 0.75){
+                    updatenotes("The "+enemy+" uses Devastation. "+updatephealth3(-50 +Math.floor(Math.random()*30-15) ));
+                    creationhit.play();
+                }
+                else{
+                    updatenotes("The "+enemy+" uses Devastation, and misses.");
+                }
+            }
         }
+        
         if(t==="Slash") {
             updatenotes("The "+ enemy + " uses Slash. "+updatephealth(-20 +Math.floor(Math.random()*20-10) ));
             attackhit.play();
         }
         if(t==="Stab") {
-            if(Math.random() > 0.5)
+            if(Math.random() > 0.25)
                 updatenotes("The "+enemy+" uses Stab. "+updatephealth(-40 +Math.floor(Math.random()*30-15) ));
             else
                 updatenotes("The "+enemy+" uses Stab, and misses.");
@@ -330,7 +393,7 @@ var buttonpress = function(t) {
                 updatenotes("The "+enemy+" uses Heal, but fails!");
             }
             else{
-                var heal = 20;
+                var heal = 50;
                 updatenotes("The "+enemy+" uses Heal, and recovers "+heal+" HP!");
                 enemyheal -= 1;
                 healentity.play();
@@ -364,7 +427,7 @@ var buttonpress = function(t) {
             }
         }
         if(t==="Annihilation") {
-            if(Math.floor(Math.random() * 2) === 0){
+            if(Math.floor(Math.random() * 3) === 0){
                 if(Math.random() > 0.10){
                     updatenotes("The "+enemy+" uses Annhilation. "+updatephealth(-80 +Math.floor(Math.random()*30-15) ));
                     creationhit.play();
@@ -373,9 +436,18 @@ var buttonpress = function(t) {
                     updatenotes("The "+enemy+" uses Annhilation, and misses.");
                 }
             }
-            else{
+            else if(Math.floor(Math.random() * 3) === 1){
                 if(Math.random() > 0.10){
                     updatenotes("The "+enemy+" uses Annhilation. "+updatephealth2(-80 +Math.floor(Math.random()*30-15) ));
+                    creationhit.play();
+                }
+                else{
+                    updatenotes("The "+enemy+" uses Annhilation, and misses.");
+                }
+            }
+            else{
+                if(Math.random() > 0.10){
+                    updatenotes("The "+enemy+" uses Annhilation. "+updatephealth3(-80 +Math.floor(Math.random()*30-15) ));
                     creationhit.play();
                 }
                 else{
@@ -387,12 +459,28 @@ var buttonpress = function(t) {
             makeattacks();
         if(playerhp2>0)
             makeattacks2();
+        if(playerhp3>0)
+            makeattacks3();
         else
             makebutton("Continue");
     }
     
     //Player moves
     else {
+        if(t==="Protection") {
+            if(playersp3>0){
+                updatenotes(player3+" prepares to Protect!");
+                playersp3 -= 10;
+                playerdefend = 1;
+                playerdefend2 = 1;
+                playerdefend3 = 1;
+                protection.play();
+                playerstamina3.text(playersp3);
+            }
+            else{
+                updatenotes('SP is too low to use Protection!');
+            }
+        }
         if(t==="Slash") {
             updatenotes(player+" uses Slash. "+updateehealth(-20 +Math.floor(Math.random()*20-10) ));
             attackhit.play();
@@ -457,12 +545,7 @@ var buttonpress = function(t) {
                 updatenotes("Out of Heals!")
             }
             else{
-                if(window.location.pathname == '/pages/thecreator.html') {
-                    var heal = 50;
-                }
-                else{
-                    var heal = 20;
-                }
+                var heal = 50;
                 updatenotes(player2+" uses Heal, and recovered "+heal+" HP!");
                 healentity.play();
                 updatephealth2(heal);
@@ -475,15 +558,23 @@ var buttonpress = function(t) {
                 updatenotes("Out of Heals!")
             }
             else{
-                if(window.location.pathname == '/pages/thecreator.html') {
-                    var heal = 50;
-                }
-                else{
-                    var heal = 20;
-                }
+                var heal = 50;
                 updatenotes(player+" uses Heal, and recovered "+heal+" HP!");
                 healentity.play();
                 updatephealth(heal);
+                healsleft -= 1;
+                updateheals(healsleft);
+            }
+        }
+        if(t==="Heal Mira"){
+            if(heals<=0){
+                updatenotes("Out of Heals!")
+            }
+            else{
+                var heal = 50;
+                updatenotes(player3+" uses Heal, and recovered "+heal+" HP!");
+                healentity.play();
+                updatephealth3(heal);
                 healsleft -= 1;
                 updateheals(healsleft);
             }
@@ -509,6 +600,14 @@ var makebutton2 = function(t) {
     attacklist2.append(button);
 };
 
+var makebutton3 = function(t) {
+    var button = $('<button/>',{
+        text: t,
+        click: function () { buttonpress(t); }
+    });
+    attacklist3.append(button);
+};
+
 
 var cookie = 0;
 
@@ -530,6 +629,7 @@ $(document).ready(function() {
     //Get arguments
     player = "Len";
     player2 = "Gabriel";
+    player3 = "Mira";
     
     if(window.location.pathname == '/pages/page6.html' || window.location.pathname == '/pages/page9.html') {
         enemy = "Creation";
@@ -547,22 +647,25 @@ $(document).ready(function() {
     //Get important elements
     playerhealth = $("#playerhealth");
     playerhealth2 = $("#playerhealth2");
+    playerhealth3 = $("#playerhealth3");
     playerstamina = $("#playerstamina");
     playerstamina2 = $("#playerstamina2");
+    playerstamina3 = $("#playerstamina3");
     enemyhealth = $("#enemyhealth");
     battlenotes = $("#battlenotes");
     attacklist = $("#attacklist");
     attacklist2 = $("#attacklist2");
-    healthbar = $("#healthbar");
-    healthbar2 = $("#healthbar2");
+    attacklist3 = $("#attacklist3");
 
     //Update text
     $("#playertitle").text(player);
     $("#playertitle2").text(player2);
+    $("#playertitle3").text(player3);
     $("#enemytitle").text(enemy);
     
     makeattacks();
     makeattacks2();
+    makeattacks3();
     shuffle();
     animate();
     music(); 
@@ -570,11 +673,11 @@ $(document).ready(function() {
 
 barba.hooks.after(() => {
     click();
-
+    
     //Get arguments
     player = "Len";
     player2 = "Gabriel";
-    
+    player3 = "Mira";
     
     if(window.location.pathname == '/pages/page6.html' || window.location.pathname == '/pages/page9.html') {
         enemy = "Creation";
@@ -592,25 +695,28 @@ barba.hooks.after(() => {
     //Get important elements
     playerhealth = $("#playerhealth");
     playerhealth2 = $("#playerhealth2");
+    playerhealth3 = $("#playerhealth3");
     playerstamina = $("#playerstamina");
     playerstamina2 = $("#playerstamina2");
+    playerstamina3 = $("#playerstamina3");
     enemyhealth = $("#enemyhealth");
     battlenotes = $("#battlenotes");
     attacklist = $("#attacklist");
     attacklist2 = $("#attacklist2");
-    healthbar = $("#healthbar");
-    healthbar2 = $("#healthbar2");
-
+    attacklist3 = $("#attacklist3");
+    
     //Update text
     $("#playertitle").text(player);
     $("#playertitle2").text(player2);
+    $("#playertitle3").text(player3);
     $("#enemytitle").text(enemy);
     
     makeattacks();
     makeattacks2();
+    makeattacks3();
     shuffle();
     animate();
-    music();
+    music(); 
 }); 
 
 function stats() {

@@ -410,22 +410,29 @@ button {
     font-size:20px;
 }
 
-#attacklist, #option1 {
+#attacklist {
     display:flex;
     gap:10px;
-    position:absolute;
-    bottom:125px;
-    right:120px;
-    margin-bottom: 15px;
 }
 
-#attacklist2, #option2 {
+#attacklist2{
     display:flex;
     gap:10px;
+}
+
+#attacklist3{
+    display:flex;
+    gap:10px;
+}
+
+.attack{
+    display:flex;
     position:absolute;
+    justify-content: space-between;
     bottom:125px;
-    left:120px;
     margin-bottom: 15px;
+    left:120px;
+    right:120px;
 }
 
 .moon{
