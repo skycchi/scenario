@@ -631,17 +631,14 @@ $(document).ready(function() {
     player2 = "Gabriel";
     player3 = "Mira";
     
-    if(window.location.pathname == '/pages/page6.html' || window.location.pathname == '/pages/page9.html') {
-        enemy = "Creation";
-    }
-    if(window.location.pathname == '/pages/battletest.html') {
-        enemy = "Higher Creation";
-    }
     if(window.location.pathname == '/pages/theprotector.html') {
         enemy = "Protector";
     }
     if(window.location.pathname == '/pages/thecreator.html') {
         enemy = "Creator";
+    }
+    else{
+        enemy = "Creation";
     }
 
     //Get important elements
@@ -679,17 +676,14 @@ barba.hooks.after(() => {
     player2 = "Gabriel";
     player3 = "Mira";
     
-    if(window.location.pathname == '/pages/page6.html' || window.location.pathname == '/pages/page9.html') {
-        enemy = "Creation";
-    }
-    if(window.location.pathname == '/pages/battletest.html') {
-        enemy = "Higher Creation";
-    }
     if(window.location.pathname == '/pages/theprotector.html') {
         enemy = "Protector";
     }
     if(window.location.pathname == '/pages/thecreator.html') {
         enemy = "Creator";
+    }
+    else{
+        enemy = "Creation";
     }
 
     //Get important elements
