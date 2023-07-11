@@ -482,7 +482,7 @@ var buttonpress = function(t) {
             }
         }
         if(t==="Slash") {
-            updatenotes(player+" uses Slash. "+updateehealth(-20 +Math.floor(Math.random()*20-10) ));
+            updatenotes(player3+" uses Slash. "+updateehealth(-20 +Math.floor(Math.random()*20-10) ));
             attackhit.play();
         }
         if(t==="Stab") {
